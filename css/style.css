@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+  "navbar"
+  "hero";
+}
+
+.navbar {
+  background-color: green;
+  grid-area: navbar;
+}
