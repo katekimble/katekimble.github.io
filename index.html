@@ -8,62 +8,77 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body>
-    <nav class="navbar">
-      <div>
-        <a href="https://kate-kimble.com">
-          <span>Work</span>
-        </a>
-      </div>
-      <div class="logo">
-        <a href="https://kate-kimble.com">
-          <img src="images/kk-logo.svg" alt="logo" height="156">
-        </a>
-      </div>
-      <div>
-        <a href="https://kate-kimble.com/about">
-          <span>About</span>
-        </a>
-      </div>
-    </nav>
-    <main>
-      <section class= "hero">
-        <h1>Salam! I'm Kate Kimble—a creative problem sover + experienced designer who's learning to code.</h1>
-        <img src="images/Arrow.svg" alt="arrow">
-      </section>
-      <section class="projects">
-        <div class="Stash">
-          <img src="images/Stash-Cover-Img.png" alt="project-image" height="536">
-          <div class="hover">
-            <h3>UI/UX Design + Branding</h3>
-            <h2>Cloud Storage Website</h2>
-          </div>
+    <div class="container">
+
+      <!-- nav section -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="https://kate-kimble.com">
+            <img src="images/kk-logo.svg" alt="logo" height="156">
+          </a>
         </div>
-        <div class="Admissions">
-          <img src="images/GUQAdmissions-Cover-Img.png" alt="project-image" height="536">
-          <div class="hover">
-            <h3>Visual Design</h3>
-            <h2>Admissions Landing Page</h2>
-          </div>
+        <div class="work-button">
+          <a href="https://kate-kimble.com">Work</a>
         </div>
-        <div class="Annual-Report">
-          <img src="images/AR18-Spread-Cover-Img.png" alt="project-image" height="536">
-          <div class="hover">
-            <h3>Art Direction + Design</h3>
-            <h2>Annual Report Publication</h2>
-          </div>
+        <div class="about-button">
+          <a href="https://kate-kimble.com/about">About</a>
         </div>
-        <div class="Greeting">
-          <img src="images/GUQGreeting-Cover-Img.png" alt="project-image" height="536">
-          <div class="hover">
-            <h3>Visual Design</h3>
-            <h2>Digital Holiday Greeting</h2>
+      </nav>
+
+      <main>
+        <!-- homepage hero -->
+        <section class= "hero">
+          <div class="hero-text">
+            <h1>Salam! I'm Kate Kimble—a creative problem sover + experienced designer who's learning to code.</h1>
           </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <p class="copyright">© 2019 Kate Kimble</p>
-    </footer>
+          <a href="#work">
+            <img class="arrow" src="images/Arrow.svg" alt="arrow">
+          </a>
+        </section>
+
+        <!-- projects section -->
+        <section class="projects" id="work">
+          <div class="project">
+            <img class="project-image" src="images/Stash-Cover-Img.png" alt="project-image">
+            <div class="hover">
+              <h3>UI/UX Design + Branding</h3>
+              <h2>Cloud Storage Website</h2>
+            </div>
+          </div>
+
+        <div class="project">
+            <img class="project-image" src="images/GUQAdmissions-Cover-Img.png" alt="project-image">
+            <div class="hover">
+              <h3>Visual Design</h3>
+              <h2>Admissions Landing Page</h2>
+            </div>
+          </div>
+
+          <div class="project">
+            <img class="project-image" src="images/AR18-Spread-Cover-Img.png" alt="project-image">
+            <div class="hover">
+              <h3>Art Direction + Design</h3>
+              <h2>Annual Report Publication</h2>
+            </div>
+          </div>
+
+          <div class="project">
+            <img class="project-image" src="images/GUQGreeting-Cover-Img.png" alt="project-image">
+            <div class="hover">
+              <h3>Visual Design</h3>
+              <h2>Digital Holiday Greeting</h2>
+            </div>
+          </div>
+
+        </section>
+      </main>
+
+      <footer>
+        <p class="copyright">© 2019 Kate Kimble</p>
+      </footer>
+
+    </div>
   </body>
 </html>
