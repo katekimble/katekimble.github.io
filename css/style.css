@@ -22,6 +22,14 @@ body {
   overflow: hidden;
 }
 
+#to-top-arrow {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  transform: rotate(180deg);
+  z-index: 99;
+}
+
 /*** ----- navigation ----- ***/
 nav {
   align-self: center;
@@ -48,7 +56,7 @@ nav {
   grid-area: about-button;
 }
 
-.about-button, .work-button {
+.about-button, .work-button, .prototype-button {
   align-self: center;
   border: 1px solid black;
   display: grid;
@@ -58,12 +66,16 @@ nav {
   text-transform: uppercase;
 }
 
+.prototype-button {
+  margin: 2rem 0 2rem 0;
+}
+
 .about-button:hover, .work-button:hover {
   border: 1px solid white;
   background: linear-gradient(to top, #005F88 50%, transparent 50%);
 }
 
-/*** ----- homepage hero ----- ***/
+/*** ----- ----- ----- homepage ----- ----- ----- ***/
 .hero {
   margin: 5rem 4rem 0 4rem;
   padding: 0 2rem 0 2rem;
@@ -116,9 +128,270 @@ nav {
   transform: translateY(0);
 }
 
-/*** ----- project summary section ----- ***/
+/*** ----- biography ----- ***/
+.about-hero {
+  margin: 0 5rem 0 5rem;
+  padding: 4rem;
+  text-align: center;
+}
 
+.biography, .quote {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 5fr 1fr;
+}
 
+.biography-column, .quote-column {
+  grid-column-start: 2;
+}
+
+.quote-column > h1 {
+  font-size: 10rem;
+  line-height: 10rem;
+  text-align: center;
+}
+
+.quote-column > p {
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: center;
+}
+
+.instagram {
+ background: #BBBDC480;
+ display: grid;
+ grid-gap: 2rem;
+ grid-template-columns: 3px 1fr;
+ padding: 5rem 5rem;
+ margin: 5rem 0 5rem 0;
+}
+
+.husband-image {
+  justify-self: center;
+}
+
+.instagram-link {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/*** ----- ----- ----- process pages ----- ----- ----- ***/
+.process > * {
+  grid-column: 2 / -2;
+}
+
+.research-and-planning, .research-and-planning-pt2, .early-testing, .branding-development, .mockups-and-testing, .mockups-and-testing-pt2, .conclusion {
+  padding: 3rem;
+}
+
+/* -- grid breakers -- */
+.problem-solution, .personas, .flow-images, .testing-wireframes, .preference-testing, .style-guide-images, .wireframe-testing-content, .wireframe-images, .mockup-images {
+  grid-column: 1 / -1;
+}
+
+/* -- project summary -- */
+.project-summary {
+  background: linear-gradient(to bottom, #BBBDC480 40%, transparent 50%);
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 3rem;
+}
+
+.dashboard-image {
+  grid-column: 1/ span 2;
+  grid-row: 1 / span 2;
+  height: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  justify-self: start;
+}
+
+.roles, .circle {
+  align-content: center;
+  display: grid;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  overflow: visible;
+  align-self: end;
+  margin: 0 0 0 6rem;
+}
+
+.roles {
+  color: white;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  text-align: center;
+}
+
+.role-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.circle {
+  width: 250px;
+  height: 250px;
+  background: #005F88;
+  border-radius: 50%;
+}
+
+.summary-text {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  padding-top: 3rem;
+}
+
+.travel-image, .cat-image, .plans-image, .account-laptop-image, .content-management-user-flow-image, .download-screen-wireframe, .brainstorm-sketches1, .logo-iterations, .style-guide2, .style-guide3, .dashboard-macbook, .account-mockup-image, .wireframe-sketch, .user-test-results1, .user-test-results2, .personas-2 {
+  display: none;
+}
+
+/* -- problem and solution section -- */
+.problem  {
+  background-color: #BBBDC480;
+  padding: 3rem;
+  margin-top: 2rem;
+}
+
+.solution {
+  background-color: #BBBDC440;
+  padding: 3rem;
+  margin-top: 2rem;
+}
+
+/* -- research and planning section -- */
+.competition, .tasks {
+  padding-bottom: 2rem;
+}
+
+.survey-results {
+  display: grid;
+  grid-gap: 2rem;
+  padding-top: 5rem;
+}
+
+.personas, .preference-testing, .wireframe-testing-content {
+  background-color: #BBBDC440;
+  display: grid;
+  padding: 3rem;
+  justify-content: center;
+}
+
+.flow-images {
+  display: grid;
+  grid-gap: 2rem;
+  justify-items: center;
+}
+
+.onboarding-user-flow-image {
+  width: 85%;
+  height: auto;
+}
+
+/* -- testing sections -- */
+.user-test-results1, .user-test-results2 {
+  box-shadow: 0 0.2rem 2rem #BBBDC4;
+}
+
+.mockups-and-testing-pt2 {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 5rem;
+}
+
+.usability-testing {
+  grid-column: 1 / span 3;
+}
+
+.usability-list {
+  grid-column: 1 / -1;
+}
+
+.account-mockup-image {
+  justify-self: end;
+}
+
+.wireframe-images {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding: 2rem 0 5rem 0;
+}
+
+/* -- branding section -- */
+.brainstorm-sketches2 {
+  width: 90%;
+  height: auto;
+  justify-items: center;
+  padding-bottom: 5rem;
+}
+
+.logo-images {
+  justify-items: center;
+  margin-bottom: 5rem;
+}
+
+.style-guide-images, .iphone-images {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.dashboard-iphone {
+  grid-column: 1;
+  grid-row: 1;
+  overflow: hidden;
+}
+
+.payment-iphone {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+  overflow: hidden;
+  margin: 6rem 0 0 10rem;
+}
+
+.mockup-images {
+  padding-bottom: 5rem;
+}
+
+/* -- view more projects section -- */
+.previous-next-arrows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.left-arrow {
+  transform: rotate(90deg);
+}
+
+.left-arrow:hover {
+  transform: rotate(60deg);
+}
+
+.right-arrow {
+  transform: rotate(270deg);
+}
+
+.right-arrow:hover {
+  transform: rotate(300deg);
+}
+
+/* -- hire me section -- */
+.work-together {
+  background-color: #005F881A;
+  color: #005F88;
+  grid-column: 1 / -1;
+  margin: 5rem 5rem 2rem 5rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+/* -- footer -- */
 footer {
   border-top: 1px solid black;
   display: grid;
@@ -130,44 +403,89 @@ footer {
   text-align: right;
 }
 
-/*** ----- typography ----- ***/
+/* -- typography -- */
 h1 {
   font-family: 'unna', serif;
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 4.5rem;
+  line-height: 5rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: .05rem;
+  line-height: 4rem;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 2rem;
   text-decoration: underline;
   line-height: 3.5rem;
 }
 
 p {
-  font-size: 1.5rem;
-  line-height: 1.8rem;
+  font-size: 2rem;
+  line-height: 2.7rem;
+  padding-bottom: 2rem;
+}
+
+li {
+  font-size: 2rem;
+  line-height: 2.7rem;
+  font-weight: lighter;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-bottom: 2rem;
 }
 
 a {
+  font-size: 2rem;
   letter-spacing: .1rem;
   text-decoration: none;
+  color: #005F88;
+}
+
+b {
+  font-weight: bold;
+  font-size: 2.25rem;
+  color: #FF6F61;
+}
+
+.br {
+  display: none;
+}
+
+.button > a {
+  color: black;
+}
+
+.work-button > a {
+  color: black;
+}
+
+.about-button > a {
   color: black;
 }
 
 
-/*** ----- media query tablet ----- ***/
-
+/*** ----- ----- ----- media query tablet ----- ----- ----- ***/
 @media screen and (min-width: 768px) {
 
   h1 {
-    font-size: 4rem;
-    line-height: 5rem;
+    font-size: 5rem;
+    line-height: 6rem;
+  }
+
+ b {
+   font-size: 5rem;
+   line-height: 7rem;
+  }
+
+  .br {
+    display: block;
   }
 
   .container {
@@ -208,10 +526,183 @@ a {
     padding: 5rem;
   }
 
+  /* -- biography -- */
+  .instagram {
+    grid-template-columns: 3px 1fr 1fr;
+    justify-items: center;
+    padding-left: 20px;
+  }
+
+  .husband-image {
+    justify-self: end;
+  }
+
+  .travel-image {
+    justify-self: start;
+  }
+
+  .instagram-link {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+
+  /* -- project summary -- */
+  .project-summary {
+    background: linear-gradient(to bottom, #BBBDC480 50%, transparent 50%);
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 3rem;
+  }
+
+  .dashboard-image {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 80%;
+    object-fit: cover;
+  }
+
+  .roles, .circle {
+    align-content: center;
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    overflow: visible;
+    align-self: start;
+  }
+
+  .roles {
+    color: white;
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .role-list {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .circle {
+    width: 250px;
+    height: 250px;
+    background: #005F88;
+    border-radius: 50%;
+  }
+
+  .account-laptop-image {
+    align-self: end;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    height: 75%;
+    justify-self: end;
+    overflow: visible;
+    object-fit: cover;
+  }
+
+  .summary-text {
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: 5rem;
+  }
+
+  /* -- process section -- */
+  .upload-screen-wireframe, .onboard-screen-wireframe {
+    display: none;
+  }
+
+  .travel-image, .content-management-user-flow-image, .download-screen-wireframe, .style-guide2, .user-test-results1, .user-test-results2, .account-laptop-image {
+    display: block;
+  }
+
+  .problem, .solution {
+    padding: 5rem;
+  }
+
+  .problem-solution, .preference-images, .personas, .flow-images  {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .persona-images {
+    align-self: flex-start;
+  }
+
+  .preference-testing, .wireframe-testing-content, .work-together {
+    padding: 5rem;
+    align-items: center;
+  }
+
+  .survey-results {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 5rem;
+  }
+
+  .content-management-user-flow-image {
+    justify-self: end;
+    width: 85%;
+    height: auto;
+  }
+
+  .onboarding-user-flow-image {
+    justify-self: start;
+  }
+
+ .wireframe-images {
+   padding-bottom: 5rem;
+ }
+
+  .wireframe-images, .sketch-images, .logo-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .stash-logo {
+    background-color: #BBBDC440;
+    padding: 5rem 10rem 5rem 10rem;
+    width: 35%;
+    height: auto;
+  }
+
+  .brainstorm-sketches2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .style-guide-images {
+    grid-template-columns: repeat(2, 1fr);
+    justify-self: center;
+  }
+
+  .mockup-images {
+    padding-bottom: 5rem;
+  }
+
+  .user-test-results1 {
+    grid-column: 1;
+    grid-row: 1;
+    overflow: hidden;
+  }
+
+  .user-test-results2 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    overflow: hidden;
+    margin: 5rem 0 0 20rem;
+    justify-self: center;
+  }
+
 }
 
-/*** ----- media query desktop ----- ***/
 
+/*** ----- ----- ----- media query desktop ----- ----- ----- ***/
 @media screen and (min-width: 1224px) {
 
   .container {
@@ -249,48 +740,203 @@ a {
     padding: 11rem 10rem 4rem 10rem;
   }
 
-  /*- project pages -*/
+  /* -- biography -- */
+  .instagram {
+    grid-template-columns: 3px 1fr 1fr 1fr;
+    justify-content: center;
+  }
 
-  .project-summary {
-    background: linear-gradient(to bottom, #BBBDC480 67%, transparent 50%);
+  .husband-image {
+    justify-self: end;
+  }
+
+  .travel-image {
+    justify-self: center;
+  }
+
+  .cat-image {
+    justify-self: start;
+  }
+
+  .instagram-link {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* -- project summary -- */
+  .process {
     display: grid;
     grid-gap: 2rem 2rem;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .project-summary {
+    background: linear-gradient(to bottom, #BBBDC480 70%, transparent 50%);
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     padding: 5rem;
-    margin: 5rem;
+    margin: 4rem;
+    max-height: 1000px;
   }
 
   .dashboard-image {
-    grid-column: 1;
+    height: 140%;
+    weight: auto;
     grid-row: 1 / span 3;
-    overflow: hidden;
   }
 
   .plans-image {
-    align-self: end;
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: center;
+    align-items: end;
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    justify-items: start;
     box-shadow: 0 0.2rem 2rem #BBBDC4;
     overflow: hidden;
+    margin-top: 15rem;
+    visibility: visible;
   }
 
   .account-laptop-image {
     align-self: center;
-    grid-column: 5;
-    grid-row: 2;
+    grid-column: 5 / span 3;
+    grid-row: 3;
+    height: 140%;
     justify-self: end;
-    overflow: hidden;
+    margin-bottom: 10rem;
+    visibility: visible;
+  }
+
+  .roles, .circle {
+    align-content: center;
+    display: grid;
+    grid-row: 1;
   }
 
   .roles {
-    grid-column: 5;
+    color: white;
+    grid-column: 7;
+    text-align: center;
+  }
+
+  .role-list {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .circle {
+    width: 250px;
+    height: 250px;
+    background: #005F88;
+    border-radius: 50%;
   }
 
   .summary-text {
-    grid-column: 4 / span 2;
+    grid-column: 6 / span 2;
+    grid-row: 4;
     padding-top: 4rem;
+    overflow: visible;
+    margin-left: 3rem;
+  }
+
+  /* -- process section -- */
+  .personas, .preference-testing  {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .persona-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .personas-1, .user-test-results1 {
+    grid-column: 1;
+    grid-row: 1;
+    overflow: hidden;
+    margin: 0 -8rem 0 0;
+  }
+
+  .personas-2, .user-test-results2 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    overflow: hidden;
+    margin: 5rem 0 0 20rem;
+    justify-self: center;
+  }
+
+  .tasks  {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .wireframe-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2rem;
+    justify-content: center;
+    padding-bottom: 5rem;
+  }
+
+  .upload-screen-wireframe {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .onboard-screen-wireframe {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .download-screen-wireframe {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .sketch-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    padding-top: 5rem;
+  }
+
+  .logo-images {
+    display: grid;
+    justify-items: center;
+    padding-bottom: 5rem;
+  }
+
+  .stash-logo {
+    background-color: #BBBDC440;
+    display: grid;
+    padding: 5rem 25rem 5rem 25rem;
+    margin-top: 5rem;
+  }
+
+  .mockup-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    padding-right: 10rem;
+  }
+
+  .cat-image, .plans-image, .account-laptop-image, .style-guide3, .account-mockup-image, .wireframe-sketch, .brainstorm-sketches1, .logo-iterations, .upload-screen-wireframe, .onboard-screen-wireframe, .dashboard-macbook, .personas-2 {
+    display: block;
+  }
+
+  .style-guide-images {
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: center;
+  }
+
+  .usability-list {
+    grid-column: 1 / span 2;
   }
 
 }
