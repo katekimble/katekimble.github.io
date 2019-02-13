@@ -185,7 +185,7 @@ nav {
 }
 
 /* -- grid breakers -- */
-.problem-solution, .personas, .flow-images, .testing-wireframes, .preference-testing, .style-guide-images, .wireframe-testing-content, .wireframe-images, .mockup-images {
+.problem-solution, .personas, .flow-images, .testing-wireframes, .preference-testing, .style-guide-images, .adm-brand-images, .wireframe-testing-content, .wireframe-images, .mockup-images {
   grid-column: 1 / -1;
 }
 
@@ -199,7 +199,7 @@ nav {
   padding: 3rem;
 }
 
-.dashboard-image {
+.dashboard-image, .homepage-image {
   grid-column: 1/ span 2;
   grid-row: 1 / span 2;
   height: 50%;
@@ -243,7 +243,7 @@ nav {
   padding-top: 3rem;
 }
 
-.travel-image, .cat-image, .plans-image, .account-laptop-image, .content-management-user-flow-image, .download-screen-wireframe, .brainstorm-sketches1, .logo-iterations, .style-guide2, .style-guide3, .dashboard-macbook, .account-mockup-image, .wireframe-sketch, .user-test-results1, .user-test-results2, .personas-2 {
+.travel-image, .cat-image, .plans-image, .accreditation-image, .account-laptop-image, .application-laptop-image, .content-management-user-flow-image, .download-screen-wireframe, .brainstorm-sketches1, .logo-iterations, .style-guide2, .adm-brand-image2, .style-guide3, .adm-brand-image3, .dashboard-macbook, .account-mockup-image, .wireframe-sketch, .adm-wireframe-hifi, .user-test-results1, .user-test-results2, .personas-2 {
   display: none;
 }
 
@@ -278,13 +278,13 @@ nav {
   justify-content: center;
 }
 
-.flow-images {
+.flow-images, .sketch-images, .adm-wireframe-images {
   display: grid;
   grid-gap: 2rem;
   justify-items: center;
 }
 
-.onboarding-user-flow-image {
+.onboarding-user-flow-image, .adm-wireframe-sketch {
   width: 85%;
   height: auto;
 }
@@ -305,6 +305,11 @@ nav {
   grid-column: 1 / span 3;
 }
 
+.navigation-image {
+  grid-column: 1 / -1;
+  width: 90%;
+}
+
 .usability-list {
   grid-column: 1 / -1;
 }
@@ -313,7 +318,7 @@ nav {
   justify-self: end;
 }
 
-.wireframe-images {
+.wireframe-images, .logo-development-images {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1fr;
@@ -322,10 +327,11 @@ nav {
 }
 
 /* -- branding section -- */
-.brainstorm-sketches2 {
-  width: 90%;
+.brainstorm-sketches2, .brainstorm-sketches1 {
+  width: 80%;
   height: auto;
-  justify-items: center;
+  justify-content: center;
+  justify-self: center;
   padding-bottom: 5rem;
 }
 
@@ -334,7 +340,7 @@ nav {
   margin-bottom: 5rem;
 }
 
-.style-guide-images, .iphone-images {
+.style-guide-images, .iphone-images, .adm-brand-images {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1fr;
@@ -356,6 +362,14 @@ nav {
 
 .mockup-images {
   padding-bottom: 5rem;
+}
+
+.adm-brand-images, .adm-branding {
+  padding-bottom: 2rem;
+}
+
+.conclusion {
+  padding-top: 0;
 }
 
 /* -- view more projects section -- */
@@ -420,6 +434,7 @@ h2 {
 
 h2 > a {
   color: white;
+  font-family: 'roboto', sans-sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: .05rem;
@@ -566,7 +581,7 @@ b {
     padding: 3rem;
   }
 
-  .dashboard-image {
+  .dashboard-image, .homepage-image {
     grid-column: 1;
     grid-row: 1 / span 2;
     height: 80%;
@@ -601,7 +616,7 @@ b {
     border-radius: 50%;
   }
 
-  .account-laptop-image {
+  .account-laptop-image, .application-laptop-image {
     align-self: end;
     grid-column: 1 / span 2;
     grid-row: 1;
@@ -622,7 +637,7 @@ b {
     display: none;
   }
 
-  .travel-image, .content-management-user-flow-image, .download-screen-wireframe, .style-guide2, .user-test-results1, .user-test-results2, .account-laptop-image {
+  .travel-image, .content-management-user-flow-image, .download-screen-wireframe, .style-guide2, .adm-brand-image2, .user-test-results1, .user-test-results2, .account-laptop-image, .application-laptop-image {
     display: block;
   }
 
@@ -667,10 +682,15 @@ b {
    padding-bottom: 5rem;
  }
 
-  .wireframe-images, .sketch-images, .logo-images {
+ .adm-wireframe-sketch {
+   width: 65%;
+   height: auto;
+  }
+
+  .wireframe-images, .sketch-images, .logo-images, .adm-wireframe-images {
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
+    Justify-self: center;
   }
 
   .stash-logo {
@@ -680,14 +700,17 @@ b {
     height: auto;
   }
 
-  .brainstorm-sketches2 {
-    width: 100%;
-    height: auto;
-  }
-
-  .style-guide-images {
+  .style-guide-images, .adm-brand-images {
     grid-template-columns: repeat(2, 1fr);
     justify-self: center;
+  }
+
+  .adm-brand-image2 {
+    justify-self: start;
+  }
+
+  .adm-brand-image1 {
+    justify-self: end;
   }
 
   .mockup-images {
@@ -790,13 +813,13 @@ b {
     max-height: 1000px;
   }
 
-  .dashboard-image {
+  .dashboard-image, .homepage-image {
     height: 140%;
     weight: auto;
     grid-row: 1 / span 3;
   }
 
-  .plans-image {
+  .plans-image, .accreditation-image {
     align-items: end;
     grid-column: 4;
     grid-row: 1 / span 2;
@@ -807,7 +830,7 @@ b {
     visibility: visible;
   }
 
-  .account-laptop-image {
+  .account-laptop-image, .application-laptop-image {
     align-self: center;
     grid-column: 5 / span 3;
     grid-row: 3;
@@ -908,11 +931,26 @@ b {
     grid-row: 1 / span 2;
   }
 
-  .sketch-images {
+  .sketch-images, .adm-wireframe-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+    justify-items: center;
     padding-top: 5rem;
+  }
+
+  .adm-wireframe-images {
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .adm-wireframe-sketch, .adm-wireframe-hifi  {
+    width: 95%;
+    height: auto;
+  }
+
+  .adm-wireframe-hifi {
+    border: 1px solid #BBBDC4;
   }
 
   .logo-images {
@@ -935,11 +973,11 @@ b {
     padding-right: 10rem;
   }
 
-  .cat-image, .plans-image, .account-laptop-image, .style-guide3, .account-mockup-image, .wireframe-sketch, .brainstorm-sketches1, .logo-iterations, .upload-screen-wireframe, .onboard-screen-wireframe, .dashboard-macbook, .personas-2 {
+  .cat-image, .plans-image, .accreditation-image, .account-laptop-image, .application-laptop-image, .style-guide3, .adm-brand-image3, .account-mockup-image, .wireframe-sketch, .brainstorm-sketches1, .adm-wireframe-hifi, .logo-iterations, .upload-screen-wireframe, .onboard-screen-wireframe, .dashboard-macbook, .personas-2 {
     display: block;
   }
 
-  .style-guide-images {
+  .style-guide-images, .adm-brand-images {
     grid-template-columns: repeat(3, 1fr);
     justify-self: center;
   }
