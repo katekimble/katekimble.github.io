@@ -545,7 +545,7 @@ b {
 
   .projects {
     display: grid;
-    grid-gap: 2rem 2rem;
+    grid-gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     padding: 5rem;
   }
