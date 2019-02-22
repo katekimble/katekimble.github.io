@@ -67,7 +67,7 @@ nav {
 }
 
 .prototype-button {
-  margin: 2rem 0 2rem 0;
+  margin: 2rem 0 0 0;
 }
 
 .about-button:hover, .work-button:hover {
@@ -213,40 +213,31 @@ nav {
 
 /* -- project summary -- */
 .project-summary {
-  background: linear-gradient(to bottom, #BBBDC480 40%, transparent 50%);
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1;
   padding: 3rem;
 }
 
 .dashboard-image, .homepage-image {
-  grid-column: 1 / span 2;
-  grid-row: 1 / span 2;
-  height: 50%;
+  background-color: #BBBDC480;
+  grid-row: 1;
+  width: 100%;
+  height: 40rem;
+  justify-self: center;
   overflow: hidden;
   object-fit: cover;
-  justify-self: start;
+  object-position: top;
 }
 
-.roles, .circle {
+.roles, .circle, .ar-roles, .ar-role-circle {
   align-content: center;
-  display: grid;
-  grid-column: 1 / -1;
-  grid-row: 1;
-  overflow: visible;
-  align-self: center;
-  margin-bottom: 3rem;
-}
-
-.roles, .ar-roles, .ar-role-circle {
+  align-self: start;
   display: grid;
   color: white;
-  grid-column: 1 / -1;
-  grid-row: 1;
-  text-align: center;
+  grid-row: 3;
   justify-content: center;
+  text-align: center;
 }
 
 .role-list {
@@ -262,7 +253,6 @@ nav {
 }
 
 .summary-text {
-  grid-column: 1 / span 2;
   grid-row: 2;
   padding-top: 3rem;
 }
@@ -315,7 +305,7 @@ nav {
 
 /* -- testing sections -- */
 .user-test-results1, .user-test-results2 {
-  box-shadow: 0 0.2rem 2rem #BBBDC4;
+  box-shadow: 0 0.2rem 1rem #BBBDC4;
 }
 
 .mockups-and-testing-pt2 {
@@ -440,7 +430,6 @@ nav {
   color: #005F88;
   grid-column: 1 / -1;
   margin: 5rem 5rem 2rem 5rem;
-  padding: 3rem;
   text-align: center;
 }
 
@@ -612,7 +601,7 @@ b {
 
   /* -- project summary -- */
   .project-summary {
-    background: linear-gradient(to bottom, #BBBDC480 50%, transparent 50%);
+    background: linear-gradient(to bottom, #BBBDC480 55%, transparent 50%);
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
@@ -623,17 +612,16 @@ b {
   .dashboard-image, .homepage-image {
     grid-column: 1;
     grid-row: 1 / span 2;
-    height: 80%;
+    height: 100%;
     object-fit: cover;
+    justify-self: start;
   }
 
   .roles, .circle {
-    align-content: center;
-    display: grid;
     grid-column: 2;
     grid-row: 1;
     overflow: visible;
-    align-self: start;
+    justify-self: end;
   }
 
   .roles {
@@ -659,8 +647,9 @@ b {
     align-self: end;
     grid-column: 1 / span 2;
     grid-row: 1;
-    height: 75%;
-    justify-self: end;
+    height: 90%;
+    justify-self: center;
+    padding-left: 22rem;
     overflow: visible;
     object-fit: cover;
   }
@@ -668,7 +657,8 @@ b {
   .summary-text {
     grid-column: 2;
     grid-row: 2;
-    margin-left: 5rem;
+    padding: 5rem 0 0 5rem;
+    /* -- background-color: rgba(255, 255, 255, 0.75);-- */
   }
 
   /* -- greeting card images -- */
@@ -895,7 +885,6 @@ b {
   justify-self: center;
 }
 
-
   /* -- project summary -- */
   .process, .ar-process {
     display: grid;
@@ -903,60 +892,58 @@ b {
     grid-template-columns: repeat(7, 1fr);
   }
 
-
   .project-summary {
-    background: linear-gradient(to bottom, #BBBDC480 70%, transparent 50%);
+    background: linear-gradient(to bottom, #BBBDC480 67%, transparent 50%);
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     padding: 5rem;
-    margin: 4rem;
     max-height: 1000px;
   }
 
   .dashboard-image, .homepage-image {
-    height: 140%;
-    weight: auto;
+    width: 100%;
+    object-fit: cover;
+    grid-column: 1 / span 2;
     grid-row: 1 / span 3;
   }
 
   .plans-image, .accreditation-image {
-    align-items: end;
-    grid-column: 4;
+    align-self: center;
+    box-shadow: 0 0.2rem 0.5rem #BBBDC4;
+    grid-column: 2 / span 2;
     grid-row: 1 / span 2;
-    justify-items: start;
-    box-shadow: 0 0.2rem 2rem #BBBDC4;
+    margin-bottom: 10rem;
+    justify-self: end;
+    height: 60%;
+    weight: auto;
     overflow: hidden;
-    margin-top: 15rem;
     visibility: visible;
   }
 
   .account-laptop-image, .application-laptop-image {
-    align-self: center;
-    grid-column: 5 / span 3;
-    grid-row: 3;
-    height: 140%;
+    align-self: end;
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 2;
+    padding-left: 0;
+    height: 65%;
     justify-self: end;
-    margin-bottom: 10rem;
     visibility: visible;
   }
 
-  .roles, .ar-roles, .circle {
-    align-content: center;
-    display: grid;
-    grid-row: 1;
+  .ar-roles, .ar-role-circle  {
+    grid-column: 6;
   }
 
   .roles {
-    color: white;
-    grid-column: 7;
-    text-align: center;
+    grid-column: 4;
   }
 
-  .ar-roles, .ar-role-circle  {
+  .roles, .ar-roles, .ar-role-circle  {
     color: white;
-    grid-column: 6;
+    display: grid;
+    grid-row: 1;
     text-align: center;
   }
 
@@ -973,11 +960,10 @@ b {
   }
 
   .summary-text {
-    grid-column: 6 / span 2;
-    grid-row: 4;
-    padding-top: 4rem;
+    grid-column: 3 / span 2;
+    grid-row: 3;
     overflow: visible;
-    margin-left: 3rem;
+    align-self: end;
   }
 
   /* -- process section -- */
