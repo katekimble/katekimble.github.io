@@ -11,7 +11,7 @@ html {
 
 body {
   background-color: #FF6F61;
-  font-family: 'roboto', sans-sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
 }
 
@@ -45,7 +45,6 @@ nav {
 .logo {
   grid-area: logo;
   justify-self: center;
-  padding-bottom: 4rem;
 }
 
 .work-button {
@@ -56,18 +55,14 @@ nav {
   grid-area: about-button;
 }
 
-.about-button, .work-button, .prototype-button {
+.about-button, .work-button {
   align-self: center;
   border: 1px solid black;
+  background: #ffffff;
   display: grid;
   justify-items: center;
-  justify-self: stretch;
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
   text-transform: uppercase;
-}
-
-.prototype-button {
-  margin: 2rem 0 0 0;
 }
 
 .about-button:hover, .work-button:hover {
@@ -128,6 +123,17 @@ nav {
   transform: translateY(0);
 }
 
+.project-button {
+  background: #005F88;
+  padding: 1rem 2rem 1rem 2rem;
+  color: white;
+}
+
+.project-button:hover {
+  background: #FF6F61;
+}
+
+
 /*** ----- biography ----- ***/
 .about-hero {
   margin: 0 5rem 0 5rem;
@@ -138,23 +144,26 @@ nav {
 .biography, .quote {
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
 }
 
 .biography-column, .quote-column {
   grid-column-start: 2;
+  max-width: 750px;
 }
 
 .quote-column > h1 {
   font-size: 10rem;
   line-height: 10rem;
   text-align: center;
+  padding-top: 4rem;
 }
 
 .quote-column > p {
-  font-size: 2.5rem;
-  line-height: 4rem;
+  font-size: 4rem;
+  line-height: 5rem;
   text-align: center;
+  font-weight: 100;
 }
 
 .instagram {
@@ -185,7 +194,7 @@ nav {
 }
 
 /* -- grid breakers -- */
-.problem-solution, .personas, .flow-images, .ar-images, .testing-wireframes, .preference-testing, .style-guide-images, .adm-brand-images, .twocol-ar-images, .wireframe-testing-content, .wireframe-images, .mockup-images {
+.problem-solution, .personas, .flow-images, .ar-images, .testing-wireframes, .preference-testing, .style-guide-images, .adm-brand-images, .twocol-ar-images, .wireframe-box, .wireframe-images, .mockup-images, .dashboard-comparative-images {
   grid-column: 1 / -1;
 }
 
@@ -221,6 +230,7 @@ nav {
 
 .dashboard-image, .homepage-image {
   background-color: #BBBDC480;
+  box-shadow: 0 0.2rem 0.5rem #BBBDC4;
   grid-row: 1;
   width: 100%;
   height: 40rem;
@@ -228,6 +238,7 @@ nav {
   overflow: hidden;
   object-fit: cover;
   object-position: top;
+  margin-bottom: 4rem;
 }
 
 .roles, .circle, .ar-roles, .ar-role-circle {
@@ -254,7 +265,7 @@ nav {
 
 .summary-text {
   grid-row: 2;
-  padding-top: 3rem;
+  padding-bottom: 5rem;
 }
 
 .travel-image, .cat-image, .plans-image, .accreditation-image, .account-laptop-image, .application-laptop-image, .content-management-user-flow-image, .download-screen-wireframe, .brainstorm-sketches1, .logo-iterations, .style-guide2, .adm-brand-image2, .style-guide3, .adm-brand-image3, .dashboard-macbook, .account-mockup-image, .wireframe-sketch, .adm-wireframe-hifi, .user-test-results1, .user-test-results2, .personas-2 {
@@ -275,8 +286,12 @@ nav {
 }
 
 /* -- research and planning section -- */
+.mvp {
+  padding-bottom: 3rem;
+}
+
 .competition, .tasks {
-  padding-bottom: 2rem;
+  padding-bottom: 6rem;
 }
 
 .survey-results {
@@ -285,10 +300,10 @@ nav {
   padding-top: 5rem;
 }
 
-.personas, .preference-testing, .wireframe-testing-content {
+.personas, .preference-testing, .wireframe-box {
   background-color: #BBBDC440;
   display: grid;
-  padding: 3rem;
+  padding: 5rem;
   justify-content: center;
 }
 
@@ -308,11 +323,8 @@ nav {
   box-shadow: 0 0.2rem 1rem #BBBDC4;
 }
 
-.mockups-and-testing-pt2 {
-  display: grid;
-  grid-gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
-  padding-top: 5rem;
+.mockups-and-testing, .mockups-and-testing-pt2 {
+  padding-bottom: 4.2rem;
 }
 
 .usability-testing {
@@ -343,17 +355,24 @@ nav {
   grid-column: 1 / -1;
 }
 
-.account-mockup-image {
-  justify-self: end;
-}
-
 .wireframe-images, .logo-development-images {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1fr;
-  justify-items: center;
+  justify-content: center;
   padding: 2rem 0 5rem 0;
 }
+
+.wireframe-testing {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr;
+}
+
+.wireframe-testing-content {
+  grid-column: 2 / -2;
+}
+
 
 /* -- branding section -- */
 .brainstorm-sketches2, .brainstorm-sketches1 {
@@ -366,7 +385,6 @@ nav {
 
 .logo-images {
   justify-items: center;
-  margin-bottom: 5rem;
 }
 
 .style-guide-images, .iphone-images, .adm-brand-images {
@@ -397,6 +415,32 @@ nav {
   padding-bottom: 2rem;
 }
 
+.dashboard-comparative-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5rem;
+  justify-items: center;
+  padding-top: 5rem;
+  margin: auto;
+}
+
+.dashboard-image-1 {
+  grid-column: 1;
+  justify-self: end;
+}
+
+.dashboard-image-2 {
+  grid-column: 2;
+  justify-self: start;
+}
+
+.dashboard-image-1, .dashboard-image-2 {
+  box-shadow: 0 0.2rem 0.5rem #BBBDC4;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+
 .conclusion {
   padding-top: 0;
 }
@@ -424,45 +468,79 @@ nav {
   transform: rotate(300deg);
 }
 
+
 /* -- hire me section -- */
 .work-together {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 30fr 1fr;
   background-color: #005F881A;
   color: #005F88;
-  grid-column: 1 / -1;
   margin: 5rem 5rem 2rem 5rem;
   text-align: center;
 }
 
+.work-together-content {
+  grid-column: 2;
+  padding: 2rem;
+}
+
+
 /* -- footer -- */
 footer {
-  border-top: 1px solid black;
   display: grid;
-  font-style: italic;
   grid-column: 2 / -2;
-  justify-self: center;
+  border-top: 1px solid black;
+  font-style: italic;
   margin: 0 5rem 0 5rem;
   padding: 2rem 0 4rem 0;
-  text-align: right;
 }
+
+.footer-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+}
+
+.copyright {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.social-logos {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.fa {
+  color: black;
+  margin-right: 1.5rem;
+}
+
+.fa:hover {
+  color: #FF6F61;
+}
+
 
 /* -- typography -- */
 h1 {
-  font-family: 'unna', serif;
+  font-family: 'Unna', serif;
   font-size: 4.5rem;
   line-height: 5rem;
 }
 
 h2 {
-  font-family: 'roboto', sans-sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: .05rem;
   line-height: 4rem;
+  margin-bottom: 1rem;
 }
 
 h2 > a {
   color: white;
-  font-family: 'roboto', sans-sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: .05rem;
@@ -483,7 +561,7 @@ p {
 
 li {
   font-size: 2rem;
-  line-height: 2.7rem;
+  line-height: 3rem;
   font-weight: lighter;
 }
 
@@ -506,12 +584,13 @@ b {
   color: #FF6F61;
 }
 
+ span {
+   color: #FF6F61;
+   font-weight: 700;
+ }
+
 .br {
   display: none;
-}
-
-.button > a {
-  color: black;
 }
 
 .work-button > a {
@@ -521,7 +600,6 @@ b {
 .about-button > a {
   color: black;
 }
-
 
 /*** ----- ----- ----- media query tablet ----- ----- ----- ***/
 @media screen and (min-width: 768px) {
@@ -567,7 +645,7 @@ b {
   }
 
   .arrow {
-    padding: 10rem 10rem 5rem 10rem;
+    margin: 10rem 10rem 5rem 10rem;
     visibility: visible;
   }
 
@@ -657,7 +735,7 @@ b {
   .summary-text {
     grid-column: 2;
     grid-row: 2;
-    padding: 5rem 0 0 5rem;
+    padding: 5rem 0 1.2rem 5rem;
     /* -- background-color: rgba(255, 255, 255, 0.75);-- */
   }
 
@@ -724,7 +802,7 @@ b {
     align-self: flex-start;
   }
 
-  .preference-testing, .wireframe-testing-content, .work-together {
+  .preference-testing, .wireframe-box {
     padding: 5rem;
     align-items: center;
   }
@@ -799,6 +877,26 @@ b {
     justify-self: center;
   }
 
+/* -- footer -- */
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .copyright {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .social-logos {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+  }
+
+
 }
 
 
@@ -832,12 +930,12 @@ b {
   }
 
   .arrow {
-    padding: 10rem 10rem 5rem 10rem;
+    margin: 10rem 10rem 5rem 10rem;
     visibility: visible;
   }
 
   .arrow:hover {
-    padding: 11rem 10rem 4rem 10rem;
+    margin: 11rem 10rem 4rem 10rem;
   }
 
   /* -- biography -- */
@@ -888,8 +986,8 @@ b {
   /* -- project summary -- */
   .process, .ar-process {
     display: grid;
-    grid-gap: 2rem 2rem;
-    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5rem 2rem;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
   }
 
   .project-summary {
@@ -903,6 +1001,7 @@ b {
   }
 
   .dashboard-image, .homepage-image {
+    box-shadow: 0 0.2rem 0.5rem #BBBDC4;
     width: 100%;
     object-fit: cover;
     grid-column: 1 / span 2;
@@ -1050,7 +1149,6 @@ b {
   .logo-images {
     display: grid;
     justify-items: center;
-    padding-bottom: 5rem;
   }
 
   .stash-logo {
