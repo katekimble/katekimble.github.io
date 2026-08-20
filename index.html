@@ -7,6 +7,7 @@
     <title>Kate Kimble | Design Portfolio</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepage-refresh.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Unna" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -23,31 +24,42 @@
 
   <body>
     <div class="container">
-
-      <!-- nav section -->
-      <nav class="navbar">
-        <div class="logo">
-          <a href="https://kate-kimble.com">
-            <img src="images/kk-logo.svg" alt="logo" height="156">
-          </a>
-        </div>
-        <div class="work-button">
-          <a href="https://kate-kimble.com">Work</a>
-        </div>
-        <div class="about-button">
-          <a href="about.html">About</a>
-        </div>
-      </nav>
-
       <main>
         <!-- homepage hero -->
-        <section class= "hero">
-          <div class="hero-text">
-            <h1>Hi! I'm Kate Kimble—a creative problem solver + experienced designer.</h1>
+        <section class="hero" id="top">
+          <div class="hero-logo">
+            <a href="https://kate-kimble.com">
+              <img src="images/kk-logo.svg" alt="Kate Kimble">
+            </a>
           </div>
-          <a href="#work">
-            <img class="arrow" src="images/Arrow.svg" alt="arrow">
-          </a>
+
+          <div class="hero-content">
+            <h1>Hi, I’m Kate!</h1>
+            <p class="hero-intro">Product design leader at the University of Phoenix. Focused on clarity, trust, and purpose-driven outcomes.</p>
+          </div>
+
+          <div class="hero-links">
+            <div class="hero-link-group">
+              <h2>MY WORK</h2>
+              <a href="#resume">Resume</a>
+              <a href="#work">Featured projects</a>
+            </div>
+
+            <div class="hero-link-group">
+              <h2>FIND ME</h2>
+              <a href="https://www.linkedin.com/in/katekimble/">LinkedIn</a>
+              <a href="https://www.instagram.com/katekimble/?hl=en">Instagram</a>
+              <a href="mailto:kimblek1@gmail.com">Email</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- resume shell -->
+        <section class="resume" id="resume">
+          <div class="resume-content">
+            <h2 class="resume-title">Resume</h2>
+            <p class="resume-label">WORK HISTORY</p>
+          </div>
         </section>
 
         <!-- projects section -->
@@ -105,7 +117,6 @@
               <a class="project-button" href="greeting-project.html">View Case Study</a>
             </div>
           </div>
-
         </section>
       </main>
 
@@ -119,7 +130,12 @@
         </div>
         <div>
       </footer>
+    </div>
 
+    <div class="scroll-indicator-position">
+      <button class="scroll-indicator" id="scroll-indicator" type="button" aria-label="Scroll down">
+        <span aria-hidden="true">↓</span>
+      </button>
     </div>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -128,9 +144,46 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-134083352-1');
     </script>
 
+    <script>
+      const scrollIndicator = document.getElementById('scroll-indicator');
+      const sectionTargets = [
+        document.getElementById('resume'),
+        document.getElementById('work')
+      ];
+
+      function isAtPageBottom() {
+        return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 20;
+      }
+
+      function updateScrollIndicator() {
+        const atBottom = isAtPageBottom();
+        scrollIndicator.classList.toggle('is-at-bottom', atBottom);
+        scrollIndicator.setAttribute('aria-label', atBottom ? 'Back to top' : 'Scroll to next section');
+      }
+
+      scrollIndicator.addEventListener('click', () => {
+        if (isAtPageBottom()) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
+        const nextSection = sectionTargets.find((section) => {
+          return section && section.getBoundingClientRect().top > 80;
+        });
+
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+        }
+      });
+
+      window.addEventListener('scroll', updateScrollIndicator, { passive: true });
+      window.addEventListener('resize', updateScrollIndicator);
+      updateScrollIndicator();
+    </script>
   </body>
 </html>
