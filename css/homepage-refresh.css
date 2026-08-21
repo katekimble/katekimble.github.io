@@ -37,7 +37,7 @@
 .resume-linkedin { display:inline-block; margin-top:2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; letter-spacing:normal; text-decoration:underline; }
 .resume-linkedin:hover { color:#FF6F61; }
 .featured-projects { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; margin:0 5rem; padding:6rem 0 8rem; border-top:1px solid black; }
-.featured-projects-content { grid-column:2 / span 6; min-width:0; }
+.featured-projects-content { grid-column:2 / span 4; min-width:0; }
 .featured-projects-title { margin:0 0 4rem; font-family:'Unna',serif; font-size:4rem; line-height:1.15; font-weight:400; }
 .featured-project { margin:0 0 5.5rem; }
 .featured-project:last-child { margin-bottom:0; }
