@@ -7,130 +7,120 @@
     <title>Kate Kimble | Design Portfolio</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepage-refresh.css">
+    <link rel="stylesheet" href="css/featured-project-modal.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Unna" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#ff6f61">
-    <meta name="msapplication-TileColor" content="#ff6f61">
     <meta name="theme-color" content="#ffffff">
   </head>
 
   <body>
     <div class="container">
-
-      <!-- nav section -->
-      <nav class="navbar">
-        <div class="logo">
-          <a href="https://kate-kimble.com">
-            <img src="images/kk-logo.svg" alt="logo" height="156">
-          </a>
-        </div>
-        <div class="work-button">
-          <a href="https://kate-kimble.com">Work</a>
-        </div>
-        <div class="about-button">
-          <a href="about.html">About</a>
-        </div>
-      </nav>
-
       <main>
-        <!-- homepage hero -->
-        <section class= "hero">
-          <div class="hero-text">
-            <h1>Hi! I'm Kate Kimble—a creative problem solver + experienced designer.</h1>
+        <section class="hero" id="top">
+          <div class="hero-logo">
+            <a href="https://kate-kimble.com"><img src="images/kk-logo.svg" alt="Kate Kimble"></a>
           </div>
-          <a href="#work">
-            <img class="arrow" src="images/Arrow.svg" alt="arrow">
-          </a>
+          <div class="hero-content">
+            <h1>Hi, I’m Kate!</h1>
+            <p class="hero-intro">Product design leader at the University of Phoenix. Focused on clarity, trust, and purpose-driven outcomes.</p>
+          </div>
+          <div class="hero-links">
+            <div class="hero-link-group">
+              <h2>MY WORK</h2><a href="#resume">Resume</a><a href="#work">Featured projects</a>
+            </div>
+            <div class="hero-link-group">
+              <h2>FIND ME</h2><a href="https://www.linkedin.com/in/katekimble/">LinkedIn</a><a href="https://www.instagram.com/katekimble/?hl=en">Instagram</a><a href="mailto:kimblek1@gmail.com">Email</a>
+            </div>
+          </div>
         </section>
 
-        <!-- projects section -->
-        <section class="projects" id="work">
-          <div class="project">
-            <img class="project-image" src="images/Vignette-Cover-Img.png" alt="project-image">
-            <div class="hover">
-              <h3>UI/UX Design + Branding</h3>
-              <h2>E-Newsletter Roundup</h2>
-              <a class="project-button" href="vignette-project.html">View Case Study</a>
-            </div>
+        <section class="resume" id="resume">
+          <div class="resume-content">
+            <h2 class="resume-title">Resume</h2>
+            <p class="resume-label">WORK HISTORY</p>
+            <article class="resume-entry">
+              <h3>University of Phoenix</h3>
+              <p class="resume-role"><strong>Senior UX Manager</strong><span aria-hidden="true"> • </span>2024 - present</p>
+              <p>As a working manager, I split my time between building alongside product and engineering partners, guiding a team of five direct reports, and shaping the way design functions within the overall organization.</p>
+              <ul><li><strong>Design leadership + collaboration</strong><br>Scaling UX beyond simple execution to user-centered strategies that balance business and customer needs. Cultivating product and engineering partnerships, ensuring the design team’s impact is known at the leadership level.</li><li><strong>Team ethos + climate</strong><br>Continuously working to create a safe and collaborative environment, ensuring designers on my team have what they need to do their best work.</li><li><strong>Design system</strong><br>Leading component- and pattern-building efforts, creating an ADA-compliant, reusable design system to improve consistency and efficiency across products.</li></ul>
+            </article>
+            <article class="resume-entry">
+              <p class="resume-role"><strong>Senior UX Designer</strong><span aria-hidden="true"> • </span>2023 - 2024</p>
+              <p>As the design lead for the core authenticated experience product team, I improved site discovery and defined the vision and strategy for top visited pages.</p>
+              <ul><li><strong>Navigation overhaul</strong><br>Simplified product navigation by globally implementing singular header and footer components, decreasing the total number by 8 and 6 components respectively. Users have shown median task completion rate of 80% since implementation.</li><li><strong>Homepage vision + strategy</strong><br>Developed a long-term approach for building a scalable homepage that breaks large amounts of personalized information into small, consumable parts.</li><li><strong>Student Profile lift + shift</strong><br>Designed a scalable space for student account and profile information to gradually migrate from an old cumbersome platform.</li></ul>
+            </article>
+            <article class="resume-entry">
+              <h3>Simple Focus</h3>
+              <p class="resume-role"><strong>Senior UX Designer</strong><span aria-hidden="true"> • </span>2021 - 2023</p>
+              <p>At Simple Focus I was the lead designer for education-focused clients, including the Alliance for Early Success and the University of Phoenix—where I revamped the Faculty Portal, turning their existing manual process into a buildable shared framework that helps working instructors manage course timing and student needs.</p>
+              <p>I was also part of a team tasked with improving the American Home Shield contractor portal. Together, we interviewed real estate agents, contractors, and other staff to uncover automation opportunities and points of friction, then began making small iterative changes that ultimately increased daily product use by 23%.</p>
+            </article>
+            <article class="resume-entry">
+              <h3>Georgetown University</h3>
+              <p class="resume-role"><strong>Senior Designer</strong><span aria-hidden="true"> • </span>2017 - 2021<br><strong>Designer</strong><span aria-hidden="true"> • </span>2013 - 2017</p>
+              <p>As the solo designer at Georgetown University in Qatar, I owned the visual design and UX strategy for all internal and public facing products—from sixty-page websites to sixty-foot banners, and everything in between. In the years I spent at Georgetown’s campus in the Middle East, my biggest wins include guiding a team of agency designers and engineers to develop a functional, user-friendly CMS, and building a robust reusable component library used to curate personalized admissions web and email experiences.</p>
+            </article>
+            <section class="resume-education">
+              <p class="resume-label">EDUCATION</p>
+              <h3>Michigan State University</h3>
+              <p class="resume-role"><strong>Bachelor of Arts, Graphic Design</strong><span aria-hidden="true"> • </span>2009</p>
+            </section>
+            <a class="resume-linkedin" href="https://www.linkedin.com/in/katekimble/">View more on LinkedIn →</a>
           </div>
+        </section>
 
-          <div class="project">
-            <img class="project-image" src="images/Stash-Cover-Img.png" alt="project-image">
-            <div class="hover">
-              <h3>UI/UX Design + Branding</h3>
-              <h2>Cloud Storage Website</h2>
-              <a class="project-button" href="project.html">View Case Study</a>
-            </div>
+        <section class="featured-projects" id="work">
+          <div class="featured-projects-content">
+            <h2 class="featured-projects-title">Featured projects</h2>
+            <article class="featured-project featured-project-product">
+              <p class="featured-project-label">PRODUCT DESIGN</p>
+              <h3>Navigation overhaul</h3>
+              <p class="featured-project-description">With multiple teams operating in silos, focused on a fraction of the overall product, most discoverability data available was performative at best. By designing a single navigation system to meet the needs of all fractions, gaining stakeholder and product leader buy-in, and building a global component, users can find what they’re looking for in a fraction of the time, without calling someone for help.</p>
+              <button class="featured-project-link" type="button" data-case-study-modal>View case study →</button>
+            </article>
+            <article class="featured-project featured-project-visual">
+              <p class="featured-project-label">VISUAL DESIGN</p>
+              <h3>Digital Holiday Greetings</h3>
+              <p class="featured-project-description">Designed creative and culturally appropriate greeting cards, celebrating both Islamic and Christian holidays, to be shared with the university community and beyond.</p>
+              <div class="featured-project-gifs" aria-label="Digital Holiday Greetings examples">
+                <img src="images/HNY_2017.gif" alt="New Year digital greeting">
+                <img src="images/Eid-Al-Fitr_2018.gif" alt="Eid al-Fitr digital greeting">
+                <img src="images/Eid-Al-Adha_2018.gif" alt="Eid al-Adha digital greeting">
+                <img src="images/christmas_2017.gif" alt="Christmas digital greeting">
+              </div>
+            </article>
           </div>
+        </section>
 
-          <div class="project">
-            <img class="project-image" src="images/Ponderlily-Cover-Img.png" alt="project-image">
-            <div class="hover">
-              <h3>Design + Consultation</h3>
-              <h2>Planning Printables</h2>
-              <a class="project-button" href="printables-project.html">View Case Study</a>
-            </div>
-          </div>
-
-          <div class="project">
-            <img class="project-image" src="images/GUQAdmissions-Cover-Img.png" alt="project-image">
-            <div class="hover">
-              <h3>Visual Design</h3>
-              <h2>Admissions Homepage</h2>
-              <a class="project-button" href="admissions-project.html">View Case Study</a>
-            </div>
-          </div>
-
-          <div class="project">
-            <img class="project-image" src="images/AR18-Spread-Cover-Img.png" alt="project-image">
-            <div class="hover">
-              <h3>Art Direction + Design</h3>
-              <h2>University Annual Reports</h2>
-              <a class="project-button" href="report-project.html">View Case Study</a>
-            </div>
-          </div>
-
-          <div class="project">
-            <img class="project-image" src="images/GUQGreeting-Cover-Img.png" alt="project-image">
-            <div class="hover">
-              <h3>Visual Design</h3>
-              <h2>Digital Holiday Greetings</h2>
-              <a class="project-button" href="greeting-project.html">View Case Study</a>
-            </div>
-          </div>
-
+        <section class="projects" id="legacy-projects" aria-hidden="true">
+          <div class="project"><img class="project-image" src="images/Vignette-Cover-Img.png" alt="project-image"><div class="hover"><h3>UI/UX Design + Branding</h3><h2>E-Newsletter Roundup</h2><a class="project-button" href="vignette-project.html">View Case Study</a></div></div>
+          <div class="project"><img class="project-image" src="images/Stash-Cover-Img.png" alt="project-image"><div class="hover"><h3>UI/UX Design + Branding</h3><h2>Cloud Storage Website</h2><a class="project-button" href="project.html">View Case Study</a></div></div>
+          <div class="project"><img class="project-image" src="images/Ponderlily-Cover-Img.png" alt="project-image"><div class="hover"><h3>Design + Consultation</h3><h2>Planning Printables</h2><a class="project-button" href="printables-project.html">View Case Study</a></div></div>
+          <div class="project"><img class="project-image" src="images/GUQAdmissions-Cover-Img.png" alt="project-image"><div class="hover"><h3>Visual Design</h3><h2>Admissions Homepage</h2><a class="project-button" href="admissions-project.html">View Case Study</a></div></div>
+          <div class="project"><img class="project-image" src="images/AR18-Spread-Cover-Img.png" alt="project-image"><div class="hover"><h3>Art Direction + Design</h3><h2>University Annual Reports</h2><a class="project-button" href="report-project.html">View Case Study</a></div></div>
+          <div class="project"><img class="project-image" src="images/GUQGreeting-Cover-Img.png" alt="project-image"><div class="hover"><h3>Visual Design</h3><h2>Digital Holiday Greetings</h2><a class="project-button" href="greeting-project.html">View Case Study</a></div></div>
         </section>
       </main>
 
-      <footer>
-        <div class="footer-content">
-          <p class="copyright">© Kate Kimble • 2021</p>
-          <div class="social-logos">
-            <a href="mailto:kimblek1@gmail.com"><span class="fa fa-envelope-square"><span></a>
-            <a href="https://www.instagram.com/katekimble/?hl=en"><span class="fa fa-instagram"></span></a>
-            <a href="https://www.linkedin.com/in/katekimble/"><span class="fa fa-linkedin-square"></span></a>
-        </div>
-        <div>
-      </footer>
-
+      <footer><div class="footer-content"><p class="copyright">© Kate Kimble • 2026</p><div class="social-logos"><a href="mailto:kimblek1@gmail.com"><span class="fa fa-envelope-square"><span></a><a href="https://www.instagram.com/katekimble/?hl=en"><span class="fa fa-instagram"></span></a><a href="https://www.linkedin.com/in/katekimble/"><span class="fa fa-linkedin-square"></span></a></div></div></footer>
     </div>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <div class="scroll-indicator-position"><button class="scroll-indicator" id="scroll-indicator" type="button" aria-label="Scroll down"><img src="images/Arrow.svg" alt="" aria-hidden="true"></button></div>
+
+    <div class="case-study-modal" id="case-study-modal" hidden aria-hidden="true"><div class="case-study-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="case-study-modal-title"><button class="case-study-modal-close" type="button" data-case-study-close aria-label="Close">×</button><div class="case-study-modal-content"><div class="case-study-modal-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M17.59 3.41 15 6V5c0-1.1-.9-2-2-2H9C6.24 3 4 5.24 4 8h5v3h6V8l2.59 2.59c.26.26.62.41 1 .41h.01c.77 0 1.4-.63 1.4-1.41V4.41C20 3.63 19.37 3 18.59 3h-.01c-.37 0-.73.15-.99.41zM9 13v7c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-7H9z"/></svg></div><p class="case-study-modal-message" id="case-study-modal-title">This case study is under construction.</p><a class="case-study-modal-contact" href="mailto:kimblek1@gmail.com">Email me for details</a></div></div></div>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134083352-1"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-134083352-1');</script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-134083352-1');
+      const scrollIndicator = document.getElementById('scroll-indicator');
+      const sectionTargets = [document.getElementById('resume'), document.getElementById('work')];
+      function isAtPageBottom() { return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 20; }
+      function updateScrollIndicator() { const atBottom = isAtPageBottom(); scrollIndicator.classList.toggle('is-at-bottom', atBottom); scrollIndicator.setAttribute('aria-label', atBottom ? 'Back to top' : 'Scroll to next section'); }
+      scrollIndicator.addEventListener('click', () => { if (isAtPageBottom()) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; } const nextSection = sectionTargets.find(section => section && section.getBoundingClientRect().top > 80); if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); else window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); });
+      window.addEventListener('scroll', updateScrollIndicator, { passive: true }); window.addEventListener('resize', updateScrollIndicator); updateScrollIndicator();
     </script>
-
+    <script src="js/featured-project-modal-v2.js"></script>
   </body>
 </html>
