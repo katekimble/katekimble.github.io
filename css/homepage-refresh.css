@@ -4,7 +4,7 @@
 .navbar { display:none; }
 .hero { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; row-gap:0; align-items:start; align-content:center; min-height:80vh; margin:0 5rem; padding:6rem 0; box-sizing:border-box; text-align:left; border-bottom:1px solid black; }
 .hero-logo { grid-column:2 / span 2; align-self:start; justify-self:center; transform:translateY(-.5rem); }
-.hero-logo img { width:16.5rem; height:auto; }
+.hero-logo img { width:17.5rem; height:auto; }
 .hero-content { grid-column:4 / span 4; align-self:start; }
 .hero-content h1 { margin:0; font-size:5rem; line-height:1.15; }
 .hero-intro { margin:1.5rem 0 0; padding:0; max-width:100%; font-family:'Unna',serif; font-size:3.6rem; line-height:1.35; }
