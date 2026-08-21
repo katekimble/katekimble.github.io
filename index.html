@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/homepage-refresh.css">
+    <link rel="stylesheet" href="css/featured-project-modal.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Unna" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -77,7 +78,7 @@
               <p class="featured-project-label">PRODUCT DESIGN</p>
               <h3>Navigation overhaul</h3>
               <p class="featured-project-description">With multiple teams operating in silos, focused on a fraction of the overall product, most discoverability data available was performative at best. By designing a single navigation system to meet the needs of all fractions, gaining stakeholder and product leader buy-in, and building a global component, users can find what they’re looking for in a fraction of the time, without calling someone for help.</p>
-              <p class="featured-project-status">Work in progress</p>
+              <button class="featured-project-link" type="button" data-case-study-modal>View case study →</button>
             </article>
             <article class="featured-project featured-project-visual">
               <p class="featured-project-label">VISUAL DESIGN</p>
@@ -110,6 +111,17 @@
       <button class="scroll-indicator" id="scroll-indicator" type="button" aria-label="Scroll down"><img src="images/Arrow.svg" alt="" aria-hidden="true"></button>
     </div>
 
+    <div class="case-study-modal" id="case-study-modal" hidden aria-hidden="true">
+      <div class="case-study-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="case-study-modal-title">
+        <button class="case-study-modal-close" type="button" data-case-study-close aria-label="Close">×</button>
+        <div class="case-study-modal-content">
+          <div class="case-study-modal-icon" aria-hidden="true"><span class="fa fa-wrench"></span></div>
+          <p class="case-study-modal-message" id="case-study-modal-title">This case study is under construction.</p>
+          <a class="case-study-modal-contact" href="mailto:kimblek1@gmail.com">Contact me for details</a>
+        </div>
+      </div>
+    </div>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134083352-1"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-134083352-1');</script>
     <script>
@@ -120,5 +132,6 @@
       scrollIndicator.addEventListener('click', () => { if (isAtPageBottom()) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; } const nextSection = sectionTargets.find(section => section && section.getBoundingClientRect().top > 80); if (nextSection) nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); else window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); });
       window.addEventListener('scroll', updateScrollIndicator, { passive: true }); window.addEventListener('resize', updateScrollIndicator); updateScrollIndicator();
     </script>
+    <script src="js/featured-project-modal-v2.js"></script>
   </body>
 </html>
