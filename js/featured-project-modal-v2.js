@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroLinks = document.querySelector('.hero-links');
   const resumeLinkedIn = document.querySelector('.resume-linkedin');
   const featuredProjectLink = document.querySelector('.featured-project-link');
+  const sectionTopPadding = 60;
 
   function addRoundedForwardArrow(link) {
     if (!link || link.dataset.arrowStyled === 'true') return;
@@ -16,11 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
       .join('')
       .replace(/\s*[→›]\s*$/, '')
       .trimEnd();
-
     Array.from(link.childNodes).forEach(node => {
       if (node.nodeType === Node.TEXT_NODE) link.removeChild(node);
     });
-
     link.insertBefore(document.createTextNode(label + ' '), link.firstChild);
     const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     arrow.setAttribute('class', 'inline-rounded-arrow');
@@ -63,15 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollIndicator.style.marginTop = '0';
     if (isAtPageBottom() && lastGif) {
       const gifBottom = lastGif.getBoundingClientRect().bottom;
-      scrollIndicator.style.top = `${Math.max(0, gifBottom - 71)}px`;
+      scrollIndicator.style.top = `${Math.max(sectionTopPadding, gifBottom - 71)}px`;
       return;
     }
     if (heroLinks) {
       const linksTop = heroLinks.getBoundingClientRect().top;
-      scrollIndicator.style.top = `${Math.max(0, linksTop)}px`;
+      scrollIndicator.style.top = `${Math.max(sectionTopPadding, linksTop)}px`;
       return;
     }
-    scrollIndicator.style.top = '56vh';
+    scrollIndicator.style.top = `${sectionTopPadding}px`;
   }
 
   productCaseStudyTrigger?.addEventListener('click', openCaseStudyModal);
