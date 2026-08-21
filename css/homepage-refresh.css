@@ -37,7 +37,7 @@
 .resume-education .resume-label { margin-bottom:1.5rem; }
 .resume-linkedin { display:inline-flex; align-items:center; gap:.45rem; margin-top:2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; letter-spacing:normal; text-decoration:underline; }
 .resume-linkedin:hover { color:#FF6F61; }
-.resume-linkedin::after { content:'›'; font-size:1.9rem; line-height:1; font-weight:400; transform:translateY(-.05rem); }
+.resume-linkedin::after { content:none; }
 .featured-projects { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; margin:0 5rem; padding:6rem 0 8rem; border-top:1px solid black; }
 .featured-projects-content { grid-column:2 / span 4; min-width:0; }
 .featured-projects-title { margin:0 0 4rem; font-family:'Unna',serif; font-size:4rem; line-height:1.15; font-weight:400; }
@@ -47,8 +47,10 @@
 .featured-project-description { margin:0 0 1rem; padding:0; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.5; color:#000; }
 .featured-project-status { margin:0; padding:0; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; color:#000; font-style:italic; }
 .featured-project-link { display:inline-flex; align-items:center; gap:.45rem; margin:0 0 2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; letter-spacing:normal; text-decoration:underline; background:none; border:0; padding:0; cursor:pointer; font-weight:400; text-align:left; }
-.featured-project-link::after { content:'›'; font-size:1.9rem; line-height:1; font-weight:400; transform:translateY(-.05rem); }
 .featured-project-link:hover { color:#FF6F61; }
+.inline-outline-arrow { display:inline-block; width:.72rem; height:.72rem; border-top:.14rem solid currentColor; border-right:.14rem solid currentColor; transform:rotate(45deg) translateY(.06rem); transform-origin:center; flex:none; }
+.resume-linkedin .inline-outline-arrow { width:.72rem; height:.72rem; }
+.featured-project-link .inline-outline-arrow { width:.72rem; height:.72rem; }
 .featured-project-gifs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:2rem; align-items:start; margin-top:2rem; width:100%; }
 .featured-project-gifs img { display:block; width:100%; height:auto; max-width:100%; }
 #legacy-projects { display:none; }
