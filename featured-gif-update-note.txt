@@ -1,0 +1,1 @@
+Use greeting GIFs in horizontal featured-project layout.
