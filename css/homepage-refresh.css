@@ -22,18 +22,18 @@
 .scroll-indicator.is-at-bottom img { transform:rotate(180deg); }
 .resume { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; margin:0 5rem; padding:6rem 0 8rem; border-top:0; }
 .resume-content { grid-column:2 / span 4; min-width:0; }
-.resume-title { margin:0 0 3.5rem; font-family:'Unna',serif; font-size:4rem; line-height:1.15; font-weight:400; }
-.resume-label { color:#005F88; font-family:'Roboto',sans-serif; font-size:1.4rem; font-weight:bold; line-height:1.2; margin:0 0 1.8rem; padding:0; }
-.resume-entry { margin:0 0 4.5rem; }
-.resume-entry h3, .resume-education h3 { margin:0 0 1.4rem; font-family:'Roboto',sans-serif; font-size:2.1rem; line-height:1.25; font-weight:400; }
-.resume-entry p, .resume-education p { margin:0 0 1.2rem; font-family:'Roboto',sans-serif; font-size:1.25rem; line-height:1.45; }
-.resume-role { margin-bottom:1.2rem !important; }
-.resume-role strong { font-weight:700; }
-.resume-entry ul { margin:1.2rem 0 0; padding-left:1.8rem; }
-.resume-entry li { margin:0 0 1rem; padding-left:.15rem; font-family:'Roboto',sans-serif; font-size:1.2rem; line-height:1.4; }
-.resume-entry li strong { font-weight:700; }
-.resume-education { margin-top:5.2rem; }
-.resume-education .resume-label { margin-bottom:1.4rem; }
+.resume-title { margin:0 0 3.75rem; font-family:'Unna',serif; font-size:4rem; line-height:1.15; font-weight:400; }
+.resume-label { color:#005F88; font-family:'Roboto',sans-serif; font-size:1.4rem; font-weight:bold; line-height:1.2; margin:0 0 2rem; padding:0; }
+.resume-entry { margin:0 0 5rem; color:#000; }
+.resume-entry h3, .resume-education h3 { margin:0 0 1.25rem; font-family:'Roboto',sans-serif; font-size:2.2rem; line-height:1.25; font-weight:400; color:#000; text-decoration:none; }
+.resume-entry p, .resume-education p { margin:0 0 1.5rem; font-family:'Roboto',sans-serif; font-size:1.55rem; line-height:1.5; color:#000; text-decoration:none; }
+.resume-role { margin-bottom:1.5rem !important; color:#000; }
+.resume-role strong { font-weight:700; color:#000; text-decoration:none; }
+.resume-entry ul { margin:1.5rem 0 0; padding-left:1.9rem; }
+.resume-entry li { margin:0 0 1.25rem; padding-left:.15rem; font-family:'Roboto',sans-serif; font-size:1.5rem; line-height:1.45; color:#000; text-decoration:none; }
+.resume-entry li strong { font-weight:700; color:#000; text-decoration:none; }
+.resume-education { margin-top:5.5rem; color:#000; }
+.resume-education .resume-label { margin-bottom:1.5rem; }
 .resume-linkedin { display:inline-block; margin-top:2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.2rem; line-height:1.4; text-decoration:underline; }
 .resume-linkedin:hover { color:#FF6F61; }
-@media screen and (max-width:767px) { .hero,.resume { grid-template-columns:1fr; margin:0 3rem; column-gap:0; } .hero { min-height:auto; align-content:start; padding:6rem 0 5rem; } .hero-logo,.hero-content,.hero-links,.resume-content { grid-column:1; } .hero-logo { margin-top:0; transform:none; } .hero-logo img { width:12rem; } .hero-content { margin-top:5rem; } .hero-content h1 { font-size:4rem; line-height:1.2; } .hero-intro { font-size:3rem; } .hero-links { margin-top:5rem; grid-template-columns:1fr 1fr; } .hero-link-group:first-child,.hero-link-group:last-child { grid-column:auto; } .scroll-indicator-position { inset:0 3rem 0; grid-template-columns:1fr; } .scroll-indicator { grid-column:1; justify-self:end; margin-top:auto; margin-bottom:2rem; align-self:end; } .resume { padding:5rem 0 6rem; } .resume-title { font-size:3.4rem; } .resume-entry h3, .resume-education h3 { font-size:2rem; } }
+@media screen and (max-width:767px) { .hero,.resume { grid-template-columns:1fr; margin:0 3rem; column-gap:0; } .hero { min-height:auto; align-content:start; padding:6rem 0 5rem; } .hero-logo,.hero-content,.hero-links,.resume-content { grid-column:1; } .hero-logo { margin-top:0; transform:none; } .hero-logo img { width:12rem; } .hero-content { margin-top:5rem; } .hero-content h1 { font-size:4rem; line-height:1.2; } .hero-intro { font-size:3rem; } .hero-links { margin-top:5rem; grid-template-columns:1fr 1fr; } .hero-link-group:first-child,.hero-link-group:last-child { grid-column:auto; } .scroll-indicator-position { inset:0 3rem 0; grid-template-columns:1fr; } .scroll-indicator { grid-column:1; justify-self:end; margin-top:auto; margin-bottom:2rem; align-self:end; } .resume { padding:5rem 0 6rem; } .resume-title { font-size:3.4rem; } .resume-entry h3, .resume-education h3 { font-size:2rem; } .resume-entry p, .resume-education p { font-size:1.35rem; } .resume-entry li { font-size:1.3rem; } }
