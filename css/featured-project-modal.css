@@ -7,8 +7,7 @@
 .case-study-modal-icon { display:grid; place-items:center; width:4.6rem; height:4.6rem; color:#B0B2BD; line-height:1; }
 .case-study-modal-icon svg { display:block; width:100%; height:100%; fill:currentColor; }
 .case-study-modal-message { margin:0; padding:0; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.5; color:#000; }
-.case-study-modal-contact { display:inline-flex; align-items:center; justify-content:center; min-width:22rem; min-height:5.5rem; padding:1.3rem 2.6rem; box-sizing:border-box; border-radius:.6rem; background:#005F88; color:#fff; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.2; font-weight:400; text-decoration:underline; transition:background-color .2s ease; }
+.case-study-modal-contact { display:inline-flex; align-items:center; justify-content:center; min-width:22rem; min-height:5.5rem; padding:1.3rem 2.6rem; box-sizing:border-box; border-radius:.6rem; background:#005F88; color:#fff; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.2; font-weight:400; text-decoration:none; transition:background-color .2s ease; }
 .case-study-modal-contact:hover { background:#FF6F61; color:#fff; }
 body.modal-open { overflow:hidden; }
-.resume-linkedin::after, .featured-project-link::after { content:none !important; }
 @media screen and (max-width:767px) { .case-study-modal { padding:1.5rem; } .case-study-modal-dialog { min-height:32rem; padding:6rem 2rem; border-radius:.9rem; } .case-study-modal-close { top:1.5rem; right:1.5rem; } .case-study-modal-message { font-size:1.8rem; } .case-study-modal-contact { font-size:1.8rem; min-width:18rem; border-radius:.5rem; } }
