@@ -25,10 +25,11 @@
 .hero-logo {
   grid-column: 2 / span 2;
   align-self: start;
+  justify-self: center;
 }
 
 .hero-logo img {
-  width: 15rem;
+  width: 14rem;
   height: auto;
 }
 
@@ -53,9 +54,9 @@
 }
 
 .hero-links {
-  grid-column: 4 / span 3;
+  grid-column: 4 / span 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 2rem;
   margin-top: 7rem;
 }
@@ -65,6 +66,14 @@
   align-content: start;
   justify-items: start;
   row-gap: 0.8rem;
+}
+
+.hero-link-group:first-child {
+  grid-column: 1;
+}
+
+.hero-link-group:last-child {
+  grid-column: 2;
 }
 
 .hero-link-group h2 {
@@ -90,17 +99,22 @@
 
 .scroll-indicator-position {
   position: fixed;
-  inset: 0;
+  inset: 0 5rem 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  column-gap: 2rem;
   pointer-events: none;
   z-index: 100;
 }
 
 .scroll-indicator {
-  position: absolute;
-  left: calc(50% + 26rem);
-  bottom: 4rem;
-  width: 6rem;
-  height: 6rem;
+  grid-column: 6 / span 2;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: 9rem;
+  width: 7rem;
+  height: 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +124,7 @@
   border-radius: 50%;
   color: #000;
   font-family: 'Roboto', sans-serif;
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 1;
   cursor: pointer;
   pointer-events: auto;
@@ -195,11 +209,22 @@
 
   .hero-links {
     margin-top: 5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-link-group:first-child,
+  .hero-link-group:last-child {
+    grid-column: auto;
+  }
+
+  .scroll-indicator-position {
+    inset: 0 3rem 0;
+    grid-template-columns: 1fr;
   }
 
   .scroll-indicator {
-    left: auto;
-    right: 2rem;
-    bottom: 2rem;
+    grid-column: 1;
+    justify-self: end;
+    margin-bottom: 2rem;
   }
 }
