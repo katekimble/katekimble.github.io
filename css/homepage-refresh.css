@@ -3,8 +3,8 @@
 .page-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; }
 .navbar { display:none; }
 .hero { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; row-gap:0; align-items:start; align-content:center; min-height:80vh; margin:0 5rem; padding:6rem 0; box-sizing:border-box; text-align:left; border-bottom:1px solid black; }
-.hero-logo { grid-column:2 / span 2; align-self:start; justify-self:center; }
-.hero-logo img { width:16rem; height:auto; }
+.hero-logo { grid-column:2 / span 2; align-self:start; justify-self:center; margin-top:-0.25rem; }
+.hero-logo img { width:17rem; height:auto; }
 .hero-content { grid-column:4 / span 4; align-self:start; }
 .hero-content h1 { margin:0; font-size:5rem; line-height:1.15; }
 .hero-intro { margin:1.5rem 0 0; padding:0; max-width:100%; font-family:'Unna',serif; font-size:3.6rem; line-height:1.35; }
@@ -16,9 +16,11 @@
 .hero-link-group a { color:#000; font-size:1.8rem; line-height:1.4; text-decoration:none; }
 .hero-link-group a:hover { color:#FF6F61; }
 .scroll-indicator-position { position:fixed; inset:0 5rem 0; height:100vh; display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; pointer-events:none; z-index:100; }
-.scroll-indicator { grid-column:6 / span 2; align-self:start; justify-self:center; margin-top:calc(100vh - 20rem); width:7rem; height:7rem; display:flex; align-items:center; justify-content:center; padding:0; background:#fff; border:1px solid #000; border-radius:50%; color:#000; font-family:'Roboto',sans-serif; font-size:3rem; line-height:1; cursor:pointer; pointer-events:auto; }
-.scroll-indicator:hover { background:#FF6F61; }
-.scroll-indicator span { display:block; color:#000; transition:transform .25s ease; }
+.scroll-indicator { grid-column:6 / span 2; align-self:start; justify-self:center; margin-top:56vh; width:7rem; height:7rem; display:flex; align-items:center; justify-content:center; padding:0; background:#fff; border:1px solid #000; border-radius:50%; cursor:pointer; pointer-events:auto; }
+.scroll-indicator:hover { background:#fff; }
+.scroll-indicator span { position:relative; display:block; width:1.4rem; height:2.7rem; color:transparent; transition:transform .25s ease; }
+.scroll-indicator span::before { content:""; position:absolute; left:50%; top:0; width:1px; height:2rem; background:#000; transform:translateX(-50%); }
+.scroll-indicator span::after { content:""; position:absolute; left:50%; bottom:0; width:.65rem; height:.65rem; border-right:1px solid #000; border-bottom:1px solid #000; transform:translateX(-50%) rotate(45deg); }
 .scroll-indicator.is-at-bottom span { transform:rotate(180deg); }
 .resume { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; margin:0 5rem; padding:6rem 0; }
 .resume-content { grid-column:2 / span 4; min-width:0; }
