@@ -1,0 +1,12 @@
+.case-study-modal[hidden] { display:none; }
+.case-study-modal { position:fixed; inset:0; z-index:1000; display:grid; place-items:center; padding:2rem; background:rgba(0,0,0,.7); backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px); }
+.case-study-modal-dialog { position:relative; width:min(100%,118rem); min-height:42rem; display:grid; place-items:center; padding:8rem 4rem; box-sizing:border-box; background:#fff; border-radius:2.2rem; box-shadow:0 2rem 6rem rgba(0,0,0,.18); text-align:center; }
+.case-study-modal-close { position:absolute; top:2.5rem; right:2.5rem; width:3.2rem; height:3.2rem; display:grid; place-items:center; padding:0; border:0; background:transparent; color:#000; font:400 3rem/1 'Roboto',sans-serif; cursor:pointer; }
+.case-study-modal-close:hover { color:#FF6F61; }
+.case-study-modal-content { display:grid; justify-items:center; gap:2.8rem; max-width:60rem; }
+.case-study-modal-icon { color:#B0B2BD; font-size:4.6rem; line-height:1; }
+.case-study-modal-message { margin:0; font-family:'Roboto',sans-serif; font-size:2.2rem; line-height:1.4; color:#3F414A; }
+.case-study-modal-contact { display:inline-flex; align-items:center; justify-content:center; min-width:22rem; min-height:5.5rem; padding:1.3rem 2.6rem; box-sizing:border-box; border-radius:1rem; background:#1F2024; color:#fff; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.2; font-weight:700; text-decoration:none; transition:background-color .2s ease; }
+.case-study-modal-contact:hover { background:#FF6F61; color:#fff; }
+body.modal-open { overflow:hidden; }
+@media screen and (max-width:767px) { .case-study-modal { padding:1.5rem; } .case-study-modal-dialog { min-height:32rem; padding:6rem 2rem; border-radius:1.5rem; } .case-study-modal-close { top:1.5rem; right:1.5rem; } .case-study-modal-message { font-size:1.8rem; } .case-study-modal-contact { font-size:1.6rem; min-width:18rem; } }
