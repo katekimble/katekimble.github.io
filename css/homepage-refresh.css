@@ -26,8 +26,8 @@
 .resume-label { color:#005F88; font-family:'Roboto',sans-serif; font-size:1.4rem; font-weight:bold; line-height:1.2; margin:0 0 2rem; padding:0; }
 .resume-entry { margin:0 0 5rem; color:#000; }
 .resume-entry h3, .resume-education h3 { margin:0 0 1.25rem; font-family:'Roboto',sans-serif; font-size:2.2rem; line-height:1.25; font-weight:400; color:#000; text-decoration:none; }
-.resume-entry p, .resume-education p { margin:0 0 .9rem; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.5; color:#000; text-decoration:none; }
-.resume-role { margin-bottom:.9rem !important; color:#000; }
+.resume-entry p, .resume-education p { margin:0 0 .9rem; padding-bottom:0; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.5; color:#000; text-decoration:none; }
+.resume-role { margin-bottom:.9rem !important; padding-bottom:0 !important; color:#000; }
 .resume-role strong { font-weight:700; color:#000; text-decoration:none; }
 .resume-entry ul { margin:.9rem 0 0; padding-left:1.9rem; }
 .resume-entry li { margin:0 0 .9rem; padding-left:.15rem; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.45; color:#000; text-decoration:none; }
