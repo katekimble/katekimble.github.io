@@ -3,8 +3,11 @@ const caseStudyModal = document.getElementById('case-study-modal');
 const caseStudyClose = document.querySelector('[data-case-study-close]');
 const scrollIndicator = document.getElementById('scroll-indicator');
 const lastGif = document.querySelector('.featured-project-gifs img:last-child');
+const heroLinks = document.querySelector('.hero-links');
 const resumeLinkedIn = document.querySelector('.resume-linkedin');
 const featuredProjectLink = document.querySelector('.featured-project-link');
+
+let heroArrowTop = 0;
 
 function addOutlinedArrow(link) {
   if (!link || link.dataset.arrowStyled === 'true') return;
@@ -23,6 +26,11 @@ function addOutlinedArrow(link) {
   arrow.setAttribute('aria-hidden', 'true');
   link.appendChild(arrow);
   link.dataset.arrowStyled = 'true';
+}
+
+function updateHeroArrowPosition() {
+  if (!heroLinks || !scrollIndicator) return;
+  heroArrowTop = heroLinks.getBoundingClientRect().top;
 }
 
 addOutlinedArrow(resumeLinkedIn);
@@ -48,13 +56,13 @@ function isAtPageBottom() {
   return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 20;
 }
 
-function updateBottomArrowPosition() {
+function updateScrollIndicatorPosition() {
   if (!scrollIndicator) return;
   if (isAtPageBottom() && lastGif) {
     const gifBottom = lastGif.getBoundingClientRect().bottom;
     scrollIndicator.style.marginTop = `${Math.max(0, gifBottom - 71)}px`;
   } else {
-    scrollIndicator.style.marginTop = 'calc(56vh - 3rem)';
+    scrollIndicator.style.marginTop = `${heroArrowTop}px`;
   }
 }
 
@@ -67,6 +75,11 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && caseStudyModal && !caseStudyModal.hidden) closeCaseStudyModal();
 });
 
-window.addEventListener('scroll', updateBottomArrowPosition, { passive: true });
-window.addEventListener('resize', updateBottomArrowPosition);
-updateBottomArrowPosition();
+function refreshScrollIndicator() {
+  updateHeroArrowPosition();
+  updateScrollIndicatorPosition();
+}
+
+window.addEventListener('scroll', updateScrollIndicatorPosition, { passive: true });
+window.addEventListener('resize', refreshScrollIndicator);
+refreshScrollIndicator();
