@@ -3,7 +3,7 @@
 .page-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; }
 .navbar { display:none; }
 .hero { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; row-gap:0; align-items:start; align-content:center; min-height:80vh; margin:0 5rem; padding:6rem 0; box-sizing:border-box; text-align:left; border-bottom:1px solid black; }
-.hero-logo { grid-column:2 / span 2; align-self:start; justify-self:center; margin-top:-0.25rem; }
+.hero-logo { grid-column:2 / span 2; align-self:start; justify-self:center; transform:translateY(-.5rem); }
 .hero-logo img { width:17rem; height:auto; }
 .hero-content { grid-column:4 / span 4; align-self:start; }
 .hero-content h1 { margin:0; font-size:5rem; line-height:1.15; }
@@ -16,14 +16,12 @@
 .hero-link-group a { color:#000; font-size:1.8rem; line-height:1.4; text-decoration:none; }
 .hero-link-group a:hover { color:#FF6F61; }
 .scroll-indicator-position { position:fixed; inset:0 5rem 0; height:100vh; display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; pointer-events:none; z-index:100; }
-.scroll-indicator { grid-column:6 / span 2; align-self:start; justify-self:center; margin-top:56vh; width:7rem; height:7rem; display:flex; align-items:center; justify-content:center; padding:0; background:#fff; border:1px solid #000; border-radius:50%; cursor:pointer; pointer-events:auto; }
-.scroll-indicator:hover { background:#fff; }
-.scroll-indicator span { position:relative; display:block; width:1.4rem; height:2.7rem; color:transparent; transition:transform .25s ease; }
-.scroll-indicator span::before { content:""; position:absolute; left:50%; top:0; width:1px; height:2rem; background:#000; transform:translateX(-50%); }
-.scroll-indicator span::after { content:""; position:absolute; left:50%; bottom:0; width:.65rem; height:.65rem; border-right:1px solid #000; border-bottom:1px solid #000; transform:translateX(-50%) rotate(45deg); }
-.scroll-indicator.is-at-bottom span { transform:rotate(180deg); }
+.scroll-indicator { grid-column:6 / span 2; align-self:start; justify-self:center; margin-top:56vh; width:7.1rem; height:7.1rem; display:block; padding:0; background:transparent; border:0; border-radius:50%; cursor:pointer; pointer-events:auto; }
+.scroll-indicator img { display:block; width:100%; height:100%; transition:transform .25s ease; }
+.scroll-indicator:hover { background:transparent; }
+.scroll-indicator.is-at-bottom img { transform:rotate(180deg); }
 .resume { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; margin:0 5rem; padding:6rem 0; }
 .resume-content { grid-column:2 / span 4; min-width:0; }
 .resume-title { margin:0 0 4rem; }
 .resume-label { color:#005F88; font-family:'Roboto',sans-serif; font-size:1.4rem; font-weight:bold; line-height:1.2; margin:0; padding:0; }
-@media screen and (max-width:767px) { .hero,.resume { grid-template-columns:1fr; margin:0 3rem; column-gap:0; } .hero { min-height:auto; align-content:start; padding:6rem 0 5rem; } .hero-logo,.hero-content,.hero-links,.resume-content { grid-column:1; } .hero-logo img { width:12rem; } .hero-content { margin-top:5rem; } .hero-content h1 { font-size:4rem; line-height:1.2; } .hero-intro { font-size:3rem; } .hero-links { margin-top:5rem; grid-template-columns:1fr 1fr; } .hero-link-group:first-child,.hero-link-group:last-child { grid-column:auto; } .scroll-indicator-position { inset:0 3rem 0; grid-template-columns:1fr; } .scroll-indicator { grid-column:1; justify-self:end; margin-top:auto; margin-bottom:2rem; align-self:end; } }
+@media screen and (max-width:767px) { .hero,.resume { grid-template-columns:1fr; margin:0 3rem; column-gap:0; } .hero { min-height:auto; align-content:start; padding:6rem 0 5rem; } .hero-logo,.hero-content,.hero-links,.resume-content { grid-column:1; } .hero-logo { transform:none; } .hero-logo img { width:12rem; } .hero-content { margin-top:5rem; } .hero-content h1 { font-size:4rem; line-height:1.2; } .hero-intro { font-size:3rem; } .hero-links { margin-top:5rem; grid-template-columns:1fr 1fr; } .hero-link-group:first-child,.hero-link-group:last-child { grid-column:auto; } .scroll-indicator-position { inset:0 3rem 0; grid-template-columns:1fr; } .scroll-indicator { grid-column:1; justify-self:end; margin-top:auto; margin-bottom:2rem; align-self:end; } }
