@@ -2,7 +2,7 @@
 
 .page-grid { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; }
 .navbar { display:none; }
-.hero { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; row-gap:0; align-items:start; align-content:center; min-height:80vh; margin:0 5rem; padding:6rem 0; box-sizing:border-box; text-align:left; border-bottom:1px solid black; }
+.hero { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; row-gap:0; align-items:start; align-content:center; min-height:92vh; margin:0 5rem; padding:9rem 0; box-sizing:border-box; text-align:left; border-bottom:1px solid black; }
 .hero-logo { grid-column:2 / span 2; align-self:start; justify-self:center; margin-top:0; transform:none; }
 .hero-logo img { width:17.5rem; height:auto; }
 .hero-content { grid-column:4 / span 4; align-self:start; }
@@ -35,8 +35,9 @@
 .resume-entry li strong { font-weight:700; color:#000; text-decoration:none; }
 .resume-education { margin-top:5.5rem; color:#000; }
 .resume-education .resume-label { margin-bottom:1.5rem; }
-.resume-linkedin { display:inline-block; margin-top:2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; letter-spacing:normal; text-decoration:underline; }
+.resume-linkedin { display:inline-flex; align-items:center; gap:.45rem; margin-top:2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; letter-spacing:normal; text-decoration:underline; }
 .resume-linkedin:hover { color:#FF6F61; }
+.resume-linkedin::after { content:'›'; font-size:1.9rem; line-height:1; font-weight:400; transform:translateY(-.05rem); }
 .featured-projects { display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); column-gap:2rem; margin:0 5rem; padding:6rem 0 8rem; border-top:1px solid black; }
 .featured-projects-content { grid-column:2 / span 4; min-width:0; }
 .featured-projects-title { margin:0 0 4rem; font-family:'Unna',serif; font-size:4rem; line-height:1.15; font-weight:400; }
@@ -45,9 +46,10 @@
 .featured-project h3 { margin:0 0 1.25rem; font-family:'Roboto',sans-serif; font-size:2.2rem; line-height:1.25; font-weight:400; color:#000; text-decoration:none; }
 .featured-project-description { margin:0 0 1rem; padding:0; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.5; color:#000; }
 .featured-project-status { margin:0; padding:0; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; color:#000; font-style:italic; }
-.featured-project-link { display:inline-block; margin:0 0 2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; letter-spacing:normal; text-decoration:underline; background:none; border:0; padding:0; cursor:pointer; font-weight:400; text-align:left; }
+.featured-project-link { display:inline-flex; align-items:center; gap:.45rem; margin:0 0 2rem; color:#000; font-family:'Roboto',sans-serif; font-size:1.8rem; line-height:1.4; letter-spacing:normal; text-decoration:underline; background:none; border:0; padding:0; cursor:pointer; font-weight:400; text-align:left; }
+.featured-project-link::after { content:'›'; font-size:1.9rem; line-height:1; font-weight:400; transform:translateY(-.05rem); }
 .featured-project-link:hover { color:#FF6F61; }
 .featured-project-gifs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:2rem; align-items:start; margin-top:2rem; width:100%; }
 .featured-project-gifs img { display:block; width:100%; height:auto; max-width:100%; }
 #legacy-projects { display:none; }
-@media screen and (max-width:767px) { .hero,.resume,.featured-projects { grid-template-columns:1fr; margin:0 3rem; column-gap:0; } .hero { min-height:auto; align-content:start; padding:6rem 0 5rem; } .hero-logo,.hero-content,.hero-links,.resume-content,.featured-projects-content { grid-column:1; } .hero-logo { margin-top:0; transform:none; } .hero-logo img { width:12rem; } .hero-content { margin-top:5rem; } .hero-content h1 { font-size:4rem; line-height:1.2; } .hero-intro { font-size:3rem; } .hero-links { margin-top:5rem; grid-template-columns:1fr 1fr; } .hero-link-group:first-child,.hero-link-group:last-child { grid-column:auto; } .scroll-indicator-position { inset:0 3rem 0; grid-template-columns:1fr; } .scroll-indicator { grid-column:1; justify-self:end; margin-top:auto; margin-bottom:2rem; align-self:end; } .resume { padding:5rem 0 6rem; } .resume-title { font-size:3.4rem; } .resume-label, .resume-education .resume-label, .featured-project-label { font-size:1.4rem; } .resume-entry h3, .resume-education h3 { font-size:2rem; } .resume-entry p, .resume-education p { font-size:1.8rem; } .resume-entry li { font-size:1.8rem; } .resume-linkedin { font-size:1.8rem; } .featured-projects { padding:5rem 0 6rem; } .featured-projects-title { font-size:3.4rem; } .featured-project h3 { font-size:2rem; } .featured-project-description,.featured-project-status,.featured-project-link { font-size:1.8rem; } .featured-project-gifs { grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; } }
+@media screen and (max-width:767px) { .hero,.resume,.featured-projects { grid-template-columns:1fr; margin:0 3rem; column-gap:0; } .hero { min-height:90vh; align-content:start; padding:8rem 0 6rem; } .hero-logo,.hero-content,.hero-links,.resume-content,.featured-projects-content { grid-column:1; } .hero-logo { margin-top:0; transform:none; } .hero-logo img { width:12rem; } .hero-content { margin-top:5rem; } .hero-content h1 { font-size:4rem; line-height:1.2; } .hero-intro { font-size:3rem; } .hero-links { margin-top:5rem; grid-template-columns:1fr 1fr; } .hero-link-group:first-child,.hero-link-group:last-child { grid-column:auto; } .scroll-indicator-position { inset:0 3rem 0; grid-template-columns:1fr; } .scroll-indicator { grid-column:1; justify-self:end; margin-top:auto; margin-bottom:2rem; align-self:end; } .resume { padding:5rem 0 6rem; } .resume-title { font-size:3.4rem; } .resume-label, .resume-education .resume-label, .featured-project-label { font-size:1.4rem; } .resume-entry h3, .resume-education h3 { font-size:2rem; } .resume-entry p, .resume-education p { font-size:1.8rem; } .resume-entry li { font-size:1.8rem; } .resume-linkedin { font-size:1.8rem; } .featured-projects { padding:5rem 0 6rem; } .featured-projects-title { font-size:3.4rem; } .featured-project h3 { font-size:2rem; } .featured-project-description,.featured-project-status,.featured-project-link { font-size:1.8rem; } .featured-project-gifs { grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; } }
