@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const tip = document.getElementById('rosette-tip');
   if (rosette && tip) {
     const petals = rosette.querySelectorAll('.petal');
+    const leads = document.querySelectorAll('.lead-line');
     function showTip(petal, x, y) {
       const [title, line] = petal.dataset.tip.split(': ');
       tip.innerHTML = '';
@@ -56,10 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
       tip.style.left = `${cx - box.left}px`;
       tip.style.top = `${y - box.top}px`;
       petals.forEach(p => p.classList.toggle('is-active', p === petal));
+      leads.forEach(l => l.classList.toggle('is-lit', l.dataset.lead === petal.dataset.petal));
       petal.setAttribute('aria-describedby', 'rosette-tip');
     }
     function hideTip() {
       tip.hidden = true;
+      leads.forEach(l => l.classList.remove('is-lit'));
       petals.forEach(p => { p.classList.remove('is-active'); p.removeAttribute('aria-describedby'); });
     }
     petals.forEach(petal => {
