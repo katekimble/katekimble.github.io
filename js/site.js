@@ -34,6 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const heroJump = document.querySelector('.jump-row .jump');
+  const heroCell = heroJump?.parentElement;
+  if (heroJump && heroCell) {
+    function placeHeroJump() {
+      const cell = heroCell.getBoundingClientRect();
+      const hidden = cell.top + heroJump.offsetHeight + 16 > window.innerHeight;
+      heroJump.classList.toggle('is-floating', hidden);
+      heroJump.style.left = hidden ? `${cell.left + (cell.width - heroJump.offsetWidth) / 2}px` : '';
+    }
+    window.addEventListener('scroll', placeHeroJump, { passive: true });
+    window.addEventListener('resize', placeHeroJump);
+    placeHeroJump();
+  }
+
   const rosette = document.querySelector('.rosette');
   const tip = document.getElementById('rosette-tip');
   if (rosette && tip) {

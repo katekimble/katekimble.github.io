@@ -40,6 +40,9 @@ a:hover, a:focus-visible { color: var(--coral); }
 .jump--up img { transform: rotate(180deg); }
 .jump:hover img, .jump:focus-visible img { filter: invert(55%) sepia(60%) saturate(1500%) hue-rotate(320deg) brightness(102%); }
 .jump-row { display: flex; justify-content: flex-end; padding-bottom: 20px; }
+.jump-cell { min-height: 71px; }
+/* When the arrow's spot is below the first screen, it floats at the bottom of the window until you scroll to it */
+.jump.is-floating { position: fixed; bottom: 16px; z-index: 4; background: #fff; }
 .jump-cell { width: var(--col); display: flex; justify-content: center; }
 
 /* Homepage hero */
