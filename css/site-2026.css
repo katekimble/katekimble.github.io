@@ -56,7 +56,15 @@ a:hover, a:focus-visible { color: var(--coral); }
 .principle { display: flex; flex-direction: column; gap: 10px; }
 .principle p { margin: 0; }
 .rosette { flex: none; width: 300px; height: 300px; }
-.rosette img { display: block; width: 303px; height: 303px; margin: -1.5px; }
+.rosette img, .rosette-svg { display: block; width: 303px; height: 303px; margin: -1.5px; }
+.rosette { position: relative; }
+.petal { cursor: help; outline: none; transition: opacity .15s ease; }
+.rosette:hover .petal, .rosette:focus-within .petal { opacity: .55; }
+.rosette .petal:hover, .rosette .petal:focus-visible, .rosette .petal.is-active { opacity: 1; }
+.petal:focus-visible path[fill] { stroke: var(--ink); stroke-width: 4; }
+.rosette-tip { position: absolute; z-index: 5; left: 0; top: 0; max-width: 220px; padding: 8px 10px; border-radius: 4px; background: var(--ink); color: #fff; font-size: 14px; line-height: 1.3; pointer-events: none; transform: translate(-50%, calc(-100% - 12px)); white-space: normal; text-align: center; }
+.rosette-tip strong { display: block; }
+@media (prefers-reduced-motion: reduce) { .petal { transition: none; } }
 
 /* Shared section layout: content column plus right-hand arrow column */
 .section { display: flex; gap: var(--gap); margin-top: 40px; padding-top: 61px; border-top: 1px solid var(--rule); }
@@ -125,7 +133,7 @@ a:hover, a:focus-visible { color: var(--coral); }
   .principles { flex-direction: column; align-items: flex-start; }
   .principles-col { width: 100%; }
   .rosette { order: -1; align-self: center; width: 240px; height: 240px; }
-  .rosette img { width: 242px; height: 242px; margin: -1px; }
+  .rosette img, .rosette-svg { width: 242px; height: 242px; margin: -1px; }
   .jump-row { justify-content: center; }
   .jump-cell { width: auto; }
   .section { flex-direction: column; padding-top: 48px; }
