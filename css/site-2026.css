@@ -43,7 +43,7 @@ a:hover, a:focus-visible { color: var(--coral); }
 .jump-row { display: flex; justify-content: flex-end; padding-bottom: 20px; }
 .jump-cell { min-height: 71px; }
 /* When the arrow's spot is below the first screen, it floats at the bottom of the window until you scroll to it */
-.jump.is-floating { position: fixed; bottom: 16px; z-index: 4; background: #fff; }
+.jump.is-floating { position: fixed; z-index: 4; background: #fff; }
 .jump-cell { width: var(--col); display: flex; justify-content: center; }
 
 /* Homepage hero */
@@ -133,6 +133,7 @@ a:hover, a:focus-visible { color: var(--coral); }
 /* Tablet and phone */
 @media screen and (max-width: 1000px) {
   .site-nav { --band: 80px; }
+  .page { padding-left: 32px; padding-right: 32px; }
   .site-nav a { width: auto; }
   .hero-header { flex-direction: column; align-items: flex-start; }
   .hero-logo { width: auto; justify-content: flex-start; }
@@ -147,7 +148,7 @@ a:hover, a:focus-visible { color: var(--coral); }
   .jump-cell { width: auto; }
   .section { flex-direction: column; padding-top: 48px; }
   .section-content { width: 100%; }
-  .section-aside { width: 100%; justify-content: flex-end; padding-bottom: 0; }
+  .section-aside { width: 100%; justify-content: center; padding-bottom: 0; }
   .section-title { font-size: 40px; }
   .bio-header { flex-direction: column; }
   .bio-photo { width: auto; justify-content: flex-start; }
