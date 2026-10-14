@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const heroJump = document.querySelector('.jump-row .jump');
+  const heroJump = document.querySelector('.jump-row .jump, .bio-aside .jump');
   const heroCell = heroJump?.parentElement;
   if (heroJump && heroCell) {
     function placeHeroJump() {
