@@ -43,7 +43,7 @@ a:hover, a:focus-visible { color: var(--coral); }
 .jump-row { display: flex; justify-content: flex-end; padding-bottom: 20px; }
 .jump-cell { min-height: 71px; }
 /* When the arrow's spot is below the first screen, it floats at the bottom of the window until you scroll to it */
-.jump.is-floating { position: fixed; bottom: 16px; z-index: 4; background: #fff; }
+.jump.is-floating { position: fixed; z-index: 4; background: #fff; }
 .jump-cell { width: var(--col); display: flex; justify-content: center; }
 
 /* Homepage hero */

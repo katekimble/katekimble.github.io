@@ -37,16 +37,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroJump = document.querySelector('.jump-row .jump, .bio-aside .jump');
   const heroCell = heroJump?.parentElement;
   if (heroJump && heroCell) {
+    const rosetteArt = document.querySelector('.rosette-svg');
+    // On phones, float the arrow over the center of the rosette's top circle when that fits on the first screen
+    function floatTop() {
+      const size = heroJump.offsetHeight;
+      const fallback = window.innerHeight - 16 - size;
+      if (!rosetteArt || !window.matchMedia('(max-width: 1000px)').matches) return fallback;
+      const art = rosetteArt.getBoundingClientRect();
+      const y = art.top + window.scrollY + art.height * 76.5 / 303 - size / 2;
+      return y >= 0 && y <= fallback ? y : fallback;
+    }
+    let fixedTop = 0;
     function placeHeroJump() {
       const cell = heroCell.getBoundingClientRect();
       const mobileOnly = heroCell.classList.contains('bio-aside') && !window.matchMedia('(max-width: 1000px)').matches;
-      const hidden = !mobileOnly && cell.top + heroJump.offsetHeight + 16 > window.innerHeight;
+      const hidden = !mobileOnly && cell.top > fixedTop;
       heroJump.classList.toggle('is-floating', hidden);
       heroJump.style.left = hidden ? `${cell.left + (cell.width - heroJump.offsetWidth) / 2}px` : '';
+      heroJump.style.top = hidden ? `${fixedTop}px` : '';
     }
+    function measure() { fixedTop = floatTop(); placeHeroJump(); }
     window.addEventListener('scroll', placeHeroJump, { passive: true });
-    window.addEventListener('resize', placeHeroJump);
-    placeHeroJump();
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+    measure();
   }
 
   const rosette = document.querySelector('.rosette');
