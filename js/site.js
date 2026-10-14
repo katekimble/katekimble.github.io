@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroJump && heroCell) {
     function placeHeroJump() {
       const cell = heroCell.getBoundingClientRect();
-      const hidden = cell.top + heroJump.offsetHeight + 16 > window.innerHeight;
+      const mobileOnly = heroCell.classList.contains('bio-aside') && !window.matchMedia('(max-width: 1000px)').matches;
+      const hidden = !mobileOnly && cell.top + heroJump.offsetHeight + 16 > window.innerHeight;
       heroJump.classList.toggle('is-floating', hidden);
       heroJump.style.left = hidden ? `${cell.left + (cell.width - heroJump.offsetWidth) / 2}px` : '';
     }
