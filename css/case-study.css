@@ -21,11 +21,11 @@
 .cs-text li { margin-left: 24px; }
 
 /* Visuals run past the text column into the arrow column */
-.cs-visual { width: 905px; max-width: calc(100% + var(--gap) + var(--col)); margin: 0; }
+.cs-visual { width: 905px; max-width: calc(100% + var(--gap) + var(--col)); margin: 0 0 0 -10px; }
 .cs-visual img { display: block; width: 100%; height: auto; }
 
 /* Before / after carousel */
-.cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin-top: 20px; }
+.cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin: 20px 0 0 -10px; }
 .cs-track { display: flex; gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .cs-track::-webkit-scrollbar { display: none; }
 .cs-slide { flex: none; margin: 0; scroll-snap-align: start; }
@@ -45,8 +45,8 @@
   .cs-intro h1 { font-size: 40px; }
   .cs-hero .section-aside { justify-content: center; }
   .cs-story-wrap { flex-direction: column; }
-  .cs-visual { width: 100%; max-width: 100%; }
-  .cs-carousel { width: 100%; }
+  .cs-visual { width: 100%; max-width: 100%; margin-left: 0; }
+  .cs-carousel { width: 100%; margin-left: 0; }
   .cs-track { gap: 16px; }
   .cs-slide { flex: 0 0 100%; }
   .cs-slide img { height: auto; width: 100%; }
