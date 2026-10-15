@@ -1,0 +1,63 @@
+/* Case study pages (built on site-2026.css) */
+
+.cs-hero { display: flex; gap: var(--gap); padding: 20px 0; }
+.cs-intro { flex: none; width: 625px; max-width: 100%; display: flex; flex-direction: column; gap: 40px; }
+.cs-intro h1 { margin: 0; font-family: 'Unna', serif; font-size: 48px; line-height: 1; font-weight: 400; }
+.cs-details { display: flex; flex-direction: column; gap: 20px; }
+.cs-subtitle { margin: 0; font-size: 25px; line-height: 1.406; }
+.cs-stats { display: flex; flex-direction: column; gap: 8px; margin: 0; }
+.cs-stat { display: flex; gap: 24px; align-items: baseline; }
+.cs-stat dt { flex: none; width: 75px; }
+.cs-stat dd { margin: 0; line-height: 1.2; }
+.cs-hero .section-aside { padding-bottom: 0; }
+
+.cs-story { display: flex; flex-direction: column; gap: 40px; }
+.cs-block { display: flex; flex-direction: column; gap: 10px; }
+.cs-block-body { display: flex; flex-direction: column; gap: 20px; }
+.cs-heading { margin: 0; font-size: 25px; line-height: 1.406; font-weight: 400; }
+.cs-text p { margin: 0; line-height: 1.2; }
+.cs-text p + p, .cs-text ul + p { margin-top: 19px; }
+.cs-text ul { margin: 0; padding: 0; list-style: disc; line-height: 1.2; }
+.cs-text li { margin-left: 24px; }
+
+/* Visuals run past the text column into the arrow column */
+.cs-visual { width: 905px; max-width: calc(100% + var(--gap) + var(--col)); margin: 0; }
+.cs-visual img { display: block; width: 100%; height: auto; }
+
+/* Before / after carousel */
+.cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin-top: 20px; }
+.cs-track { display: flex; gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.cs-track::-webkit-scrollbar { display: none; }
+.cs-slide { flex: none; margin: 0; scroll-snap-align: start; }
+.cs-slide img { display: block; height: 490px; width: auto; }
+.cs-carousel .jump { position: absolute; top: 210px; background: #fff; }
+.cs-carousel .jump { right: 11px; }
+.cs-carousel .jump img { transform: rotate(-90deg); }
+.cs-carousel.is-end .jump img { transform: rotate(90deg); }
+
+.cs-next { margin-top: 40px; padding-top: 60px; border-top: 1px solid var(--rule); }
+.cs-story-wrap { display: flex; gap: var(--gap); }
+.cs-story-wrap .section-content { gap: 0; }
+
+@media screen and (max-width: 1000px) {
+  .cs-hero { flex-direction: column; }
+  .cs-intro { width: 100%; }
+  .cs-intro h1 { font-size: 40px; }
+  .cs-hero .section-aside { justify-content: center; }
+  .cs-story-wrap { flex-direction: column; }
+  .cs-visual { width: 100%; max-width: 100%; }
+  .cs-carousel { width: 100%; }
+  .cs-track { gap: 16px; }
+  .cs-slide { flex: 0 0 100%; }
+  .cs-slide img { height: auto; width: 100%; }
+  .cs-carousel .jump { top: 50%; right: 8px; transform: translateY(-50%); }
+}
+
+@media screen and (max-width: 560px) {
+  .cs-stat { flex-direction: column; gap: 2px; }
+  .cs-subtitle { font-size: 22px; }
+}
+
+@media screen and (max-width: 560px) {
+  .cs-carousel .jump, .cs-carousel .jump img { width: 56px; height: 56px; }
+}
