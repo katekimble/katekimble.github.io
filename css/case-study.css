@@ -37,7 +37,9 @@
 }
 @media (prefers-reduced-motion: reduce) { .cs-wipe-stage img.is-on { animation: none; } }
 
-.cs-next { margin-top: 40px; padding-top: 60px; border-top: 1px solid var(--rule); }
+/* Next project: a card, per the Figma "Next" frame */
+.cs-next { margin-top: 40px; padding: 24px; gap: 10px; background: #f6f5f0; border: 1px solid #ebe7df; border-radius: 20px; }
+.cs-next .cs-block-body { gap: 20px; }
 .cs-story-wrap { display: flex; gap: var(--gap); }
 .cs-story-wrap .section-content { gap: 0; }
 
