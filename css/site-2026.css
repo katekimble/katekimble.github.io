@@ -5,6 +5,7 @@
   --blue: #005F88;
   --plum: #5D304B;
   --coral: #FF6F61;
+  --link: #DB3725;
   --rule: #000;
   --col: 297px;
   --gap: 30px;
@@ -31,7 +32,8 @@ a:hover, a:focus-visible { color: var(--coral); }
 /* Top nav */
 /* Nav sits centered in the top margin band */
 .site-nav { --band: 98px; display: flex; align-items: center; justify-content: flex-end; gap: var(--gap); height: var(--band); margin-bottom: -40px; }
-.site-nav a { width: 134px; color: var(--blue); font-size: 14px; font-weight: 700; line-height: 1.406; letter-spacing: .7px; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+/* Nav links are red so they read differently from the blue labels, which aren't links */
+.site-nav a { width: 134px; color: var(--link); font-size: 14px; font-weight: 700; line-height: 1.406; letter-spacing: .7px; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
 .site-nav a[aria-current="page"] { color: var(--plum); }
 .site-nav a:hover, .site-nav a:focus-visible { color: var(--coral); }
 
