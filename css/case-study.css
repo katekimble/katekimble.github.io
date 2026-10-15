@@ -21,11 +21,11 @@
 .cs-text li { margin-left: 24px; }
 
 /* Visuals run past the text column into the arrow column */
-.cs-visual { width: 905px; max-width: calc(100% + var(--gap) + var(--col)); margin: 0 0 0 -10px; }
+.cs-visual { width: 905px; max-width: calc(100% + var(--gap) + var(--col)); margin: 0 0 0 -5px; }
 .cs-visual img { display: block; width: 100%; height: auto; }
 
 /* Before / after carousel */
-.cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin: 20px 0 0 -10px; }
+.cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin: 20px 0 0 -5px; }
 .cs-track { display: flex; gap: 30px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .cs-track::-webkit-scrollbar { display: none; }
 .cs-slide { flex: none; margin: 0; scroll-snap-align: start; }
