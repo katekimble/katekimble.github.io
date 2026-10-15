@@ -23,6 +23,7 @@
 /* Visuals run past the text column into the arrow column */
 .cs-visual { width: 905px; max-width: calc(100% + var(--gap) + var(--col)); margin: 0 0 0 -5px; }
 .cs-visual img { display: block; width: 100%; height: auto; }
+.cs-visual.cs-concepts { margin-left: -7px; }
 
 /* Before / after carousel */
 .cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin: 20px 0 0 -5px; }
@@ -45,7 +46,7 @@
   .cs-intro h1 { font-size: 40px; }
   .cs-hero .section-aside { justify-content: center; }
   .cs-story-wrap { flex-direction: column; }
-  .cs-visual { width: 100%; max-width: 100%; margin-left: 0; }
+  .cs-visual, .cs-visual.cs-concepts { width: 100%; max-width: 100%; margin-left: 0; }
   .cs-carousel { width: 100%; margin-left: 0; }
   .cs-track { gap: 16px; }
   .cs-slide { flex: 0 0 100%; }
