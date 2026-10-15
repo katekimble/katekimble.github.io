@@ -82,7 +82,7 @@
 .cs-pause { margin-left: 8px; }
 .cs-pause svg { fill: currentColor; }
 .cs-pause:hover, .cs-pause:focus-visible { color: var(--coral); }
-.cs-phone { flex: 0 0 251px; width: 251px; height: auto; }
+.cs-stage.cs-phone { flex: 0 0 251px; width: 251px; aspect-ratio: 502 / 981; }
 @media (prefers-reduced-motion: reduce) { .cs-stage img { transition: none; } }
 @media screen and (max-width: 1000px) {
   .cs-result { flex-direction: column; align-items: stretch; }
