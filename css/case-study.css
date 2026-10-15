@@ -75,10 +75,12 @@
 .cs-state-controls .cs-dot { width: 20px; }
 .cs-dot::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--blue); box-sizing: border-box; transition: background-color .2s, border-color .2s; }
 .cs-dot[aria-pressed="true"]::before { background: var(--plum); border-color: var(--plum); }
-.cs-dot:hover::before, .cs-dot:focus-visible::before { border-color: var(--ink); }
+/* Hover matches the top navigation: coral */
+.cs-dot:hover::before, .cs-dot:focus-visible::before { border-color: var(--coral); }
+.cs-dot[aria-pressed="true"]:hover::before, .cs-dot[aria-pressed="true"]:focus-visible::before { background: var(--coral); }
 .cs-pause { margin-left: 8px; }
 .cs-pause svg { fill: currentColor; }
-.cs-pause:hover, .cs-pause:focus-visible { color: var(--ink); }
+.cs-pause:hover, .cs-pause:focus-visible { color: var(--coral); }
 .cs-phone { flex: 0 0 251px; width: 251px; height: auto; }
 @media (prefers-reduced-motion: reduce) { .cs-stage img { transition: none; } }
 @media screen and (max-width: 1000px) {
