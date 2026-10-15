@@ -70,8 +70,9 @@
 .cs-stage img.is-on { opacity: 1; z-index: 2; }
 /* The outgoing image stays fully visible underneath while the new one fades in on top, so nothing shows through mid-change */
 .cs-stage img.is-prev { opacity: 1; z-index: 1; transition: none; }
-.cs-state-controls { display: flex; align-items: center; justify-content: flex-start; gap: 4px; margin-left: -9px; }
+.cs-state-controls { display: flex; align-items: center; justify-content: flex-start; gap: 1px; margin-left: -5px; }
 .cs-state-controls button { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; border: 0; background: none; color: var(--blue); cursor: pointer; }
+.cs-state-controls .cs-dot { width: 20px; }
 .cs-dot::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--blue); box-sizing: border-box; transition: background-color .2s, border-color .2s; }
 .cs-dot[aria-pressed="true"]::before { background: var(--plum); border-color: var(--plum); }
 .cs-dot:hover::before, .cs-dot:focus-visible::before { border-color: var(--ink); }
