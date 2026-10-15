@@ -28,7 +28,7 @@
 /* Before / after: one image at a time, switched with a diagonal wipe */
 .cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin: 20px 0 0 -5px; }
 .cs-wipe-stage { position: relative; width: 625px; max-width: 100%; aspect-ratio: 1250 / 993; }
-.cs-wipe-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: left top; }
+.cs-wipe-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: left top; background: #fff; }
 .cs-wipe-stage img.is-on { z-index: 2; animation: cs-wipe .8s cubic-bezier(.65, 0, .35, 1); }
 .cs-wipe-stage img.is-prev { z-index: 1; }
 @keyframes cs-wipe {
@@ -36,9 +36,6 @@
   to { clip-path: polygon(0 0, 200% 0, 0 200%); }
 }
 @media (prefers-reduced-motion: reduce) { .cs-wipe-stage img.is-on { animation: none; } }
-.cs-carousel .jump { position: absolute; z-index: 3; top: 210px; right: 11px; background: #fff; }
-.cs-carousel .jump img { transform: rotate(-90deg); }
-.cs-carousel.is-end .jump img { transform: rotate(90deg); }
 
 .cs-next { margin-top: 40px; padding-top: 60px; border-top: 1px solid var(--rule); }
 .cs-story-wrap { display: flex; gap: var(--gap); }
@@ -52,7 +49,6 @@
   .cs-story-wrap { flex-direction: column; }
   .cs-visual, .cs-visual.cs-concepts { width: 100%; max-width: 100%; margin-left: 0; }
   .cs-carousel { width: 100%; margin-left: 0; }
-  .cs-carousel .jump { top: 50%; right: 8px; transform: translateY(-50%); }
 }
 
 @media screen and (max-width: 560px) {
@@ -60,9 +56,6 @@
   .cs-subtitle { font-size: 22px; }
 }
 
-@media screen and (max-width: 560px) {
-  .cs-carousel .jump, .cs-carousel .jump img { width: 56px; height: 56px; }
-}
 
 /* Results: the header's states, stepped through with a crossfade, beside the phone view */
 .cs-result { display: grid; grid-template-columns: 625fr 251fr; gap: 12px 30px; align-items: start; }
