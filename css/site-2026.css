@@ -95,13 +95,16 @@ a:hover, a:focus-visible { color: var(--coral); }
 .greetings img { display: block; width: 100%; height: auto; }
 
 /* Resume + contact page */
-.bio-header { display: flex; align-items: stretch; gap: var(--gap); padding: 20px 0; }
-.bio-photo { flex: none; width: 134px; display: flex; justify-content: center; }
-.bio-photo img { display: block; width: 126px; height: 126px; border-radius: 50%; }
-.bio { flex: none; width: 461px; display: flex; flex-direction: column; gap: 30px; padding: 10px 0; }
+/* Resume page about section; the title sits as far below the nav as the homepage logo */
+.about { display: flex; flex-direction: column; gap: 40px; padding: 32px 0 20px; }
+.about h1 { margin: 0 0 0 -2px; font-family: 'Unna', serif; font-size: 48px; line-height: 1; font-weight: 400; }
+.bio-header { display: flex; align-items: center; gap: var(--gap); }
+.bio-photo { flex: none; width: 300px; }
+.bio-photo img { display: block; width: 100%; height: auto; aspect-ratio: 300 / 275; object-fit: cover; box-sizing: border-box; border: 2px solid #ebe7df; border-radius: 50px; }
+.bio { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .bio p { margin: 0; }
-.bio p + p { margin-top: 19px; }
-.bio-aside { flex: none; width: var(--col); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px; }
+.bio-lead { font-size: 25px; line-height: 1.406; }
+.bio-text { display: flex; flex-direction: column; gap: 10px; }
 
 .job { display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; }
 .job p { margin: 0; }
@@ -151,10 +154,12 @@ a:hover, a:focus-visible { color: var(--coral); }
   .section-content { width: 100%; }
   .section-aside { width: 100%; justify-content: center; padding-bottom: 0; }
   .section-title { font-size: 40px; }
-  .bio-header { flex-direction: column; }
-  .bio-photo { width: auto; justify-content: flex-start; }
+  .about { padding-top: 20px; }
+  .about h1 { font-size: 40px; }
+  .bio-header { flex-direction: column; align-items: flex-start; }
+  .bio-photo { width: 100%; max-width: 300px; }
   .bio { width: 100%; }
-  .bio-aside { width: 100%; justify-content: center; }
+  .bio-lead { font-size: 22px; }
   .site-footer { flex-direction: column; align-items: flex-start; gap: 16px; }
   .site-footer nav { width: auto; gap: 24px; }
   .site-footer nav a { width: auto; }
