@@ -58,6 +58,7 @@
 
 
 /* Results: the header's states, stepped through with a crossfade, beside the phone view */
+.cs-visual.cs-result { margin-top: 20px; }
 .cs-result { display: grid; grid-template-columns: 625fr 251fr; gap: 12px 30px; align-items: start; }
 .cs-states { min-width: 0; }
 .cs-stage { position: relative; aspect-ratio: 1250 / 981; }
