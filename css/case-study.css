@@ -27,7 +27,7 @@
 
 /* Before / after: one image at a time, switched with a diagonal wipe */
 .cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin: 20px 0 0 -5px; }
-.cs-wipe-stage { position: relative; width: 625px; max-width: 100%; aspect-ratio: 1250 / 993; }
+.cs-wipe-stage { position: relative; width: 625px; max-width: 100%; aspect-ratio: 1250 / 981; }
 .cs-wipe-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: left top; background: #fff; }
 .cs-wipe-stage img.is-on { z-index: 2; animation: cs-wipe .8s cubic-bezier(.65, 0, .35, 1); }
 .cs-wipe-stage img.is-prev { z-index: 1; }
