@@ -70,16 +70,18 @@
 .cs-stage img.is-on { opacity: 1; z-index: 2; }
 /* The outgoing image stays fully visible underneath while the new one fades in on top, so nothing shows through mid-change */
 .cs-stage img.is-prev { opacity: 1; z-index: 1; transition: none; }
-.cs-state-controls { display: flex; flex-wrap: wrap; gap: 6px 16px; }
-.cs-state-controls button { padding: 4px 0; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--blue); font: 700 12px/1.4 'Roboto', sans-serif; letter-spacing: .6px; text-transform: uppercase; cursor: pointer; }
-.cs-state-controls button[aria-pressed="true"] { color: var(--plum); border-bottom-color: var(--coral); }
-.cs-state-controls button:hover, .cs-state-controls button:focus-visible { color: var(--ink); }
-.cs-state-controls .cs-pause { margin-left: auto; color: var(--ink); }
+.cs-state-controls { display: flex; align-items: center; justify-content: flex-start; gap: 4px; margin-left: -9px; }
+.cs-state-controls button { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; border: 0; background: none; color: var(--blue); cursor: pointer; }
+.cs-dot::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--blue); box-sizing: border-box; transition: background-color .2s, border-color .2s; }
+.cs-dot[aria-pressed="true"]::before { background: var(--plum); border-color: var(--plum); }
+.cs-dot:hover::before, .cs-dot:focus-visible::before { border-color: var(--ink); }
+.cs-pause { margin-left: 8px; }
+.cs-pause svg { fill: currentColor; }
+.cs-pause:hover, .cs-pause:focus-visible { color: var(--ink); }
 .cs-phone { flex: 0 0 251px; width: 251px; height: auto; }
 @media (prefers-reduced-motion: reduce) { .cs-stage img { transition: none; } }
 @media screen and (max-width: 1000px) {
   .cs-result { flex-direction: column; align-items: stretch; }
   .cs-states { flex: none; width: 100%; }
   .cs-phone { align-self: center; width: 50%; max-width: 251px; }
-  .cs-state-controls .cs-pause { margin-left: 0; }
 }
