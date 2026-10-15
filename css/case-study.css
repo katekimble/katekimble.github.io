@@ -42,7 +42,7 @@
 .cs-story-wrap .section-content { gap: 0; }
 
 @media screen and (max-width: 1000px) {
-  .cs-hero { flex-direction: column; }
+  .cs-hero { flex-direction: column; padding-top: 60px; }
   .cs-intro { width: 100%; }
   .cs-intro h1 { font-size: 40px; }
   .cs-hero .section-aside { justify-content: center; }
@@ -52,7 +52,8 @@
 }
 
 @media screen and (max-width: 560px) {
-  .cs-stat { flex-direction: column; gap: 2px; }
+  .cs-stat { flex-direction: column; gap: 10px; }
+  .cs-stats { gap: 20px; }
   .cs-subtitle { font-size: 22px; }
 }
 
@@ -83,4 +84,8 @@
 @media screen and (max-width: 1000px) {
   .cs-result { grid-template-columns: 1fr; }
   .cs-stage.cs-phone { justify-self: center; width: 50%; max-width: 251px; }
+}
+@media screen and (max-width: 560px) {
+  /* On phones the phone view runs the full column width, like the desktop view above it */
+  .cs-stage.cs-phone { width: 100%; max-width: none; }
 }
