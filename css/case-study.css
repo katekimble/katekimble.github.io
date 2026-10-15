@@ -67,7 +67,9 @@
 .cs-states { flex: 0 0 625px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
 .cs-stage { position: relative; aspect-ratio: 1250 / 981; }
 .cs-stage img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .45s ease; }
-.cs-stage img.is-on { opacity: 1; }
+.cs-stage img.is-on { opacity: 1; z-index: 2; }
+/* The outgoing image stays fully visible underneath while the new one fades in on top, so nothing shows through mid-change */
+.cs-stage img.is-prev { opacity: 1; z-index: 1; transition: none; }
 .cs-state-controls { display: flex; flex-wrap: wrap; gap: 6px 16px; }
 .cs-state-controls button { padding: 4px 0; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--blue); font: 700 12px/1.4 'Roboto', sans-serif; letter-spacing: .6px; text-transform: uppercase; cursor: pointer; }
 .cs-state-controls button[aria-pressed="true"] { color: var(--plum); border-bottom-color: var(--coral); }
