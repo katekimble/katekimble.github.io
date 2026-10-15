@@ -1,0 +1,94 @@
+/* Case study pages (built on site-2026.css) */
+
+/* Top padding puts the title as far below the nav links as the logo sits on the homepage */
+.cs-hero { display: flex; gap: var(--gap); padding: 72px 0 20px; }
+.cs-intro { flex: none; width: 625px; max-width: 100%; display: flex; flex-direction: column; gap: 20px; }
+.cs-intro h1 { margin: 0 0 0 -2px; font-family: 'Unna', serif; font-size: 48px; line-height: 1; font-weight: 400; }
+.cs-details { display: flex; flex-direction: column; gap: 20px; }
+.cs-subtitle { margin: 0; font-size: 25px; line-height: 1.406; }
+.cs-stats { display: flex; flex-direction: column; gap: 8px; margin: 0; }
+.cs-stat { display: flex; gap: 24px; align-items: baseline; }
+.cs-stat dt { flex: none; width: 75px; }
+.cs-stat dd { margin: 0; line-height: 1.2; }
+.cs-hero .section-aside { padding-bottom: 0; }
+
+.cs-story { display: flex; flex-direction: column; gap: 40px; }
+.cs-block { display: flex; flex-direction: column; gap: 10px; }
+.cs-block-body { display: flex; flex-direction: column; gap: 20px; }
+.cs-heading { margin: 0; font-size: 25px; line-height: 1.406; font-weight: 400; }
+.cs-text p { margin: 0; line-height: 1.2; }
+.cs-text p + p, .cs-text ul + p { margin-top: 19px; }
+.cs-text ul { margin: 0; padding: 0; list-style: disc; line-height: 1.2; }
+.cs-text li { margin-left: 24px; }
+
+/* Visuals run past the text column into the arrow column */
+.cs-visual { width: 905px; max-width: calc(100% + var(--gap) + var(--col)); margin: 0 0 0 -5px; }
+.cs-visual img { display: block; width: 100%; height: auto; }
+.cs-visual.cs-concepts { margin: 20px 0 20px -30px; }
+
+/* Before / after: one image at a time, switched with a diagonal wipe */
+.cs-carousel { position: relative; width: calc(100% + var(--gap) + var(--col)); margin: 20px 0 0 -5px; }
+.cs-wipe-stage { position: relative; width: 625px; max-width: 100%; aspect-ratio: 1250 / 981; }
+.cs-wipe-stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: left top; background: #fff; }
+.cs-wipe-stage img.is-on { z-index: 2; animation: cs-wipe .8s cubic-bezier(.65, 0, .35, 1); }
+.cs-wipe-stage img.is-prev { z-index: 1; }
+@keyframes cs-wipe {
+  from { clip-path: polygon(0 0, 0 0, 0 0); }
+  to { clip-path: polygon(0 0, 200% 0, 0 200%); }
+}
+@media (prefers-reduced-motion: reduce) { .cs-wipe-stage img.is-on { animation: none; } }
+
+/* Next project: a card, per the Figma "Next" frame */
+.cs-next { margin-top: 0; padding: 24px; gap: 10px; background: #f6f5f0; border: 1px solid #ebe7df; border-radius: 20px; }
+.cs-next .cs-block-body { gap: 20px; }
+.cs-story-wrap { display: flex; gap: var(--gap); }
+.cs-story-wrap .section-content { gap: 0; }
+
+@media screen and (max-width: 1000px) {
+  .cs-hero { flex-direction: column; padding-top: 60px; }
+  .cs-intro { width: 100%; }
+  .cs-intro h1 { font-size: 40px; }
+  .cs-hero .section-aside { justify-content: center; }
+  .cs-story-wrap { flex-direction: column; }
+  .cs-visual, .cs-visual.cs-concepts { width: 100%; max-width: 100%; margin-left: 0; }
+  .cs-carousel { width: 100%; margin-left: 0; }
+}
+
+@media screen and (max-width: 560px) {
+  .cs-stat { flex-direction: column; gap: 10px; }
+  .cs-stats { gap: 20px; }
+  .cs-subtitle { font-size: 22px; }
+}
+
+
+/* Results: the header's states, stepped through with a crossfade, beside the phone view */
+.cs-visual.cs-result { margin-top: 20px; }
+.cs-result { display: grid; grid-template-columns: 625fr 251fr; gap: 12px 30px; align-items: start; }
+.cs-states { min-width: 0; }
+.cs-stage { position: relative; aspect-ratio: 1250 / 981; }
+.cs-stage img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .45s ease; }
+.cs-stage img.is-on { opacity: 1; z-index: 2; }
+/* The outgoing image stays fully visible underneath while the new one fades in on top, so nothing shows through mid-change */
+.cs-stage img.is-prev { opacity: 1; z-index: 1; transition: none; }
+/* The controls drive both views; they sit centered under the desktop view */
+.cs-state-controls { grid-column: 1; display: flex; align-items: center; justify-content: center; gap: 1px; }
+.cs-state-controls button { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; border: 0; background: none; color: var(--blue); cursor: pointer; }
+.cs-state-controls .cs-dot { width: 20px; }
+.cs-dot::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--blue); box-sizing: border-box; transition: background-color .2s, border-color .2s; }
+.cs-dot[aria-pressed="true"]::before { background: var(--plum); border-color: var(--plum); }
+/* Hover matches the top navigation: coral */
+.cs-dot:hover::before, .cs-dot:focus-visible::before { border-color: var(--coral); }
+.cs-dot[aria-pressed="true"]:hover::before, .cs-dot[aria-pressed="true"]:focus-visible::before { background: var(--coral); }
+.cs-pause { margin-left: 8px; }
+.cs-pause svg { fill: currentColor; }
+.cs-pause:hover, .cs-pause:focus-visible { color: var(--coral); }
+.cs-stage.cs-phone { width: 100%; aspect-ratio: 502 / 981; }
+@media (prefers-reduced-motion: reduce) { .cs-stage img { transition: none; } }
+@media screen and (max-width: 1000px) {
+  .cs-result { grid-template-columns: 1fr; }
+  .cs-stage.cs-phone { justify-self: center; width: 50%; max-width: 251px; }
+}
+@media screen and (max-width: 560px) {
+  /* On phones the phone view runs the full column width, like the desktop view above it */
+  .cs-stage.cs-phone { width: 100%; max-width: none; }
+}

@@ -5,6 +5,7 @@
   --blue: #005F88;
   --plum: #5D304B;
   --coral: #FF6F61;
+  --link: #DB3725;
   --rule: #000;
   --col: 297px;
   --gap: 30px;
@@ -31,7 +32,8 @@ a:hover, a:focus-visible { color: var(--coral); }
 /* Top nav */
 /* Nav sits centered in the top margin band */
 .site-nav { --band: 98px; display: flex; align-items: center; justify-content: flex-end; gap: var(--gap); height: var(--band); margin-bottom: -40px; }
-.site-nav a { width: 134px; color: var(--blue); font-size: 14px; font-weight: 700; line-height: 1.406; letter-spacing: .7px; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+/* Nav links are red so they read differently from the blue labels, which aren't links */
+.site-nav a { width: 134px; color: var(--link); font-size: 14px; font-weight: 700; line-height: 1.406; letter-spacing: .7px; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
 .site-nav a[aria-current="page"] { color: var(--plum); }
 .site-nav a:hover, .site-nav a:focus-visible { color: var(--coral); }
 
@@ -95,13 +97,16 @@ a:hover, a:focus-visible { color: var(--coral); }
 .greetings img { display: block; width: 100%; height: auto; }
 
 /* Resume + contact page */
-.bio-header { display: flex; align-items: stretch; gap: var(--gap); padding: 20px 0; }
-.bio-photo { flex: none; width: 134px; display: flex; justify-content: center; }
-.bio-photo img { display: block; width: 126px; height: 126px; border-radius: 50%; }
-.bio { flex: none; width: 461px; display: flex; flex-direction: column; gap: 30px; padding: 10px 0; }
+/* Resume page about section; the title sits as far below the nav as the homepage logo */
+.about { display: flex; flex-direction: column; gap: 40px; padding: 32px 0 20px; }
+.about h1 { margin: 0 0 0 -2px; font-family: 'Unna', serif; font-size: 48px; line-height: 1; font-weight: 400; }
+.bio-header { display: flex; align-items: center; gap: var(--gap); }
+.bio-photo { flex: none; width: 300px; }
+.bio-photo img { display: block; width: 100%; height: auto; aspect-ratio: 300 / 275; object-fit: cover; box-sizing: border-box; border: 2px solid #ebe7df; border-radius: 50px; }
+.bio { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .bio p { margin: 0; }
-.bio p + p { margin-top: 19px; }
-.bio-aside { flex: none; width: var(--col); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px; }
+.bio-lead { font-size: 25px; line-height: 1.406; }
+.bio-text { display: flex; flex-direction: column; gap: 10px; }
 
 .job { display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; }
 .job p { margin: 0; }
@@ -126,14 +131,15 @@ a:hover, a:focus-visible { color: var(--coral); }
 .site-footer nav { display: flex; gap: var(--gap); width: 441px; }
 .site-footer nav a { width: 134px; text-decoration: none; }
 .site-footer nav a:hover, .site-footer nav a:focus-visible { text-decoration: underline; }
-.copyright { flex: 1; margin: 0; font-family: 'Roboto Condensed', sans-serif; font-size: 19px; font-style: italic; font-weight: 300; line-height: 1.5; text-align: right; }
+.copyright { flex: 1; margin: 0; font-family: 'Roboto Condensed', sans-serif; font-size: 16px; font-style: italic; font-weight: 300; line-height: 1.2; text-align: right; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* Tablet and phone */
 @media screen and (max-width: 1000px) {
   .site-nav { --band: 80px; }
-  .page { padding-left: 32px; padding-right: 32px; }
+  /* Footer text sits as far from the bottom edge as the nav links sit from the top */
+  .page { padding-left: 32px; padding-right: 32px; padding-bottom: 10px; }
   .site-nav a { width: auto; }
   .hero-header { flex-direction: column; align-items: flex-start; }
   .hero-logo { width: auto; justify-content: flex-start; }
@@ -150,10 +156,12 @@ a:hover, a:focus-visible { color: var(--coral); }
   .section-content { width: 100%; }
   .section-aside { width: 100%; justify-content: center; padding-bottom: 0; }
   .section-title { font-size: 40px; }
-  .bio-header { flex-direction: column; }
-  .bio-photo { width: auto; justify-content: flex-start; }
+  .about { padding-top: 20px; }
+  .about h1 { font-size: 40px; }
+  .bio-header { flex-direction: column; align-items: flex-start; }
+  .bio-photo { width: 100%; max-width: 300px; }
   .bio { width: 100%; }
-  .bio-aside { width: 100%; justify-content: center; }
+  .bio-lead { font-size: 22px; }
   .site-footer { flex-direction: column; align-items: flex-start; gap: 16px; }
   .site-footer nav { width: auto; gap: 24px; }
   .site-footer nav a { width: auto; }
