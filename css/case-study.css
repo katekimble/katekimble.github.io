@@ -69,8 +69,8 @@
 .cs-stage img.is-on { opacity: 1; z-index: 2; }
 /* The outgoing image stays fully visible underneath while the new one fades in on top, so nothing shows through mid-change */
 .cs-stage img.is-prev { opacity: 1; z-index: 1; transition: none; }
-/* The controls drive both views, so they sit centered under the pair */
-.cs-state-controls { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 1px; }
+/* The controls drive both views; they sit centered under the desktop view */
+.cs-state-controls { grid-column: 1; display: flex; align-items: center; justify-content: center; gap: 1px; }
 .cs-state-controls button { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; border: 0; background: none; color: var(--blue); cursor: pointer; }
 .cs-state-controls .cs-dot { width: 20px; }
 .cs-dot::before { content: ""; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--blue); box-sizing: border-box; transition: background-color .2s, border-color .2s; }
