@@ -94,9 +94,10 @@
 }
 
 /* Visuals shown at their natural width, starting at the text column's left edge */
-/* VSU and the three-screen concept sit 5px into the margin, like the Navigation Overhaul visuals */
+/* VSU and the three-screen concept sit 5px into the margin, like the Navigation Overhaul visuals;
+   University Resources sits 30px in, like the tradeoffs concepts */
 .cs-visual.cs-vsu { width: 763px; margin-left: -5px; }
-.cs-visual.cs-resources { width: 665px; margin-left: 0; }
+.cs-visual.cs-resources { width: 665px; margin-left: -30px; }
 .cs-visual.cs-blades { width: 875px; margin-left: -5px; }
 @media screen and (max-width: 1000px) {
   .cs-visual.cs-vsu, .cs-visual.cs-resources, .cs-visual.cs-blades { width: 100%; margin-left: 0; }
