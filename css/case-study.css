@@ -116,7 +116,12 @@
 }
 @media screen and (max-width: 700px) {
   .cs-phases { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .cs-phase { padding: 20px; }
+  .cs-phase { padding: 20px 16px; }
+}
+/* Small phones: a little less padding so each link fits on two lines */
+@media screen and (max-width: 389px) {
+  .cs-phases { gap: 12px; }
+  .cs-phase { padding: 16px 12px; }
 }
 
 /* Card titles (Next project, phases) are bold blue, per the Figma cards */
