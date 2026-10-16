@@ -102,3 +102,19 @@
 @media screen and (max-width: 1000px) {
   .cs-visual.cs-vsu, .cs-visual.cs-resources, .cs-visual.cs-blades { width: 100%; margin-left: 0; }
 }
+
+/* Homepage vision: the before/after is a full homepage, so its stage is taller */
+.cs-homepage-wipe .cs-wipe-stage { aspect-ratio: 1250 / 1859; }
+
+/* Phase cards, styled like the Next project card; the row runs past the text column like the visuals */
+.cs-phases { display: grid; grid-template-columns: repeat(4, 165px); gap: 24px; margin: 0; padding: 0; list-style: none; }
+.cs-phase { display: flex; flex-direction: column; gap: 10px; padding: 24px; background: #f6f5f0; border: 1px solid #ebe7df; border-radius: 20px; }
+.cs-phase p { margin: 0; line-height: 1.2; }
+.cs-phase .cs-heading { margin-bottom: 10px; }
+@media screen and (max-width: 1000px) {
+  .cs-phases { grid-template-columns: repeat(4, 1fr); }
+}
+@media screen and (max-width: 700px) {
+  .cs-phases { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .cs-phase { padding: 20px; }
+}
