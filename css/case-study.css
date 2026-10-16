@@ -118,3 +118,6 @@
   .cs-phases { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .cs-phase { padding: 20px; }
 }
+
+/* Card titles (Next project, phases) are bold blue, per the Figma cards */
+.cs-next .cs-heading, .cs-phase .cs-heading { font-weight: 700; color: #0f3c67; }
