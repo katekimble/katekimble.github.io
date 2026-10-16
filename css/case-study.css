@@ -92,3 +92,11 @@
   /* On phones the phone view runs the full column width, like the desktop view above it */
   .cs-stage.cs-phone { width: 100%; max-width: none; }
 }
+
+/* Visuals shown at their natural width, starting at the text column's left edge */
+.cs-visual.cs-vsu { width: 763px; margin-left: 0; }
+.cs-visual.cs-resources { width: 665px; margin-left: 0; }
+.cs-visual.cs-blades { width: 875px; margin-left: 0; }
+@media screen and (max-width: 1000px) {
+  .cs-visual.cs-vsu, .cs-visual.cs-resources, .cs-visual.cs-blades { width: 100%; }
+}
