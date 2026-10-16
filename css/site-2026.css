@@ -176,3 +176,4 @@ a:hover, a:focus-visible { color: var(--coral); }
 
 /* External link arrow: points up and out, per the Figma footer */
 .arrow-out { font-family: 'Golos Text', sans-serif; font-size: 14px; font-weight: 400; }
+.text-link .arrow-out { text-decoration: none; }
