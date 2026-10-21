@@ -41,14 +41,14 @@ a:hover, a:focus-visible { color: var(--coral); }
 .site-nav a:hover, .site-nav a:focus-visible, .contact-toggle:hover, .contact-toggle:focus-visible, .contact-toggle[aria-expanded="true"] { color: var(--coral); }
 .contact-toggle { font-family: inherit; cursor: pointer; }
 
-/* Contact: the email in a small panel under the nav, with a copy button */
+/* Contact: a pill just under the nav item with the email; clicking it copies the address */
 .contact { position: relative; }
-.contact-pop { position: absolute; top: calc(100% + 8px); right: 0; display: flex; align-items: center; gap: 16px; padding: 12px 12px 12px 16px; background: #fff; border: 2px solid #EBE7DF; border-radius: 10px; box-shadow: 0 6px 20px rgba(0, 0, 0, .08); white-space: nowrap; }
-.site-nav .contact-pop a { padding: 0; border: 0; border-radius: 0; color: var(--ink); font-size: 16px; font-weight: 400; letter-spacing: 0; line-height: var(--lh-body); text-transform: none; text-decoration: underline; }
-.site-nav .contact-pop a:hover, .site-nav .contact-pop a:focus-visible { color: var(--coral); }
-.contact-copy { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 2px solid var(--ink); border-radius: 6px; background: #fff; color: var(--ink); font: 700 14px/1.2 'Roboto', sans-serif; letter-spacing: .7px; text-transform: uppercase; cursor: pointer; }
-.contact-copy:hover, .contact-copy:focus-visible { border-color: var(--coral); color: var(--coral); }
-.contact-copy.is-copied { border-color: #226639; color: #226639; }
+.contact-pop { position: absolute; top: calc(100% + 4px); right: 0; }
+.contact-copy { display: inline-flex; align-items: baseline; gap: 10px; padding: 8px 14px 8px 16px; border: 2px solid #EBE7DF; border-radius: 999px; background: #fff; color: var(--ink); font: 400 16px/1.2 'Roboto', sans-serif; white-space: nowrap; cursor: pointer; }
+.contact-copy-label { color: #8a8a8a; font-size: 13px; }
+.contact-copy:hover, .contact-copy:focus-visible { border-color: #d6d0c4; }
+.contact-copy:hover .contact-copy-label, .contact-copy:focus-visible .contact-copy-label { color: var(--ink); }
+.contact-copy.is-copied .contact-copy-label { color: #226639; }
 
 /* Jump arrows */
 .jump { display: block; width: 71px; height: 71px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
@@ -184,8 +184,6 @@ a:hover, a:focus-visible { color: var(--coral); }
   /* Shorter labels so all three fit, spread across the width */
   .site-nav { justify-content: space-between; gap: 0; }
   .site-nav .nav-more { display: none; }
-  .contact { position: static; }
-  .contact-pop { left: 0; right: 0; justify-content: space-between; }
   .hero-intro p { font-size: 26px; }
   .greetings { gap: 10px; }
 }
