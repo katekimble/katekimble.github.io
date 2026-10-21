@@ -106,19 +106,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Contact in the nav: opens a pill with the email; clicking the pill copies it, with a soft click
+// Contact in the nav: hovering shows a pill with the email; clicking Contact (or the pill) copies it, with a soft tick
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.contact-toggle');
   const pop = document.getElementById('contact-pop');
   if (!toggle || !pop) return;
+  const box = toggle.closest('.contact');
   const copy = pop.querySelector('.contact-copy');
   const label = copy?.querySelector('.contact-copy-label');
+  let leave = null;
   const setOpen = open => {
     pop.hidden = !open;
     toggle.setAttribute('aria-expanded', String(open));
-    if (open) copy?.focus();
   };
-  toggle.addEventListener('click', () => setOpen(pop.hidden));
+  // With a mouse, the pill shows on hover and stays while the pointer moves onto it
+  box.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse') return;
+    clearTimeout(leave);
+    setOpen(true);
+  });
+  box.addEventListener('pointerleave', event => {
+    if (event.pointerType !== 'mouse') return;
+    leave = setTimeout(() => setOpen(false), 250);
+  });
   document.addEventListener('click', event => { if (!pop.hidden && !event.target.closest('.contact')) setOpen(false); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !pop.hidden) { setOpen(false); toggle.focus(); } });
 
@@ -141,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let reset = null;
-  copy?.addEventListener('click', async () => {
+  async function copyEmail() {
+    setOpen(true);
     try {
       await navigator.clipboard.writeText(copy.dataset.copy);
     } catch (e) {
@@ -149,11 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const range = document.createRange(); range.selectNodeContents(copy.querySelector('.contact-email'));
       const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
       try { document.execCommand('copy'); } catch (e2) {}
+      sel.removeAllRanges();
     }
     tick();
-    label.textContent = 'Copied';
+    label.textContent = 'Copied \u2713\uFE0E';
     copy.classList.add('is-copied');
     clearTimeout(reset);
     reset = setTimeout(() => { label.textContent = 'Copy'; copy.classList.remove('is-copied'); }, 2000);
-  });
+  }
+  toggle.addEventListener('click', copyEmail);
+  copy?.addEventListener('click', copyEmail);
 });

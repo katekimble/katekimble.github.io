@@ -126,3 +126,52 @@
 
 /* Card titles (Next project, phases) are bold blue, per the Figma cards */
 .cs-next .cs-heading, .cs-phase .cs-heading { font-weight: 700; color: #0f3c67; }
+
+/* Homepage vision phase pages: a row of phase cards, the current one dark, the others links */
+.cs-pnav ol { display: flex; align-items: stretch; gap: 24px; margin: 0; padding: 0; list-style: none; }
+.cs-pnav-item { flex: 0 0 117px; box-sizing: border-box; border: 1px solid #ebe7df; border-radius: 20px; background: #f6f5f0; }
+.cs-pnav-item.is-current { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 16px 24px; background: #0f3c67; }
+.cs-pnav-item.is-current .eyebrow { color: #ebe7df; }
+.cs-pnav-item.is-current .cs-pnav-name { margin: 0; color: #fff; font-size: 25px; font-weight: 700; line-height: 1.406; }
+.cs-pnav-item a { display: flex; flex-direction: column; gap: 9px; height: 100%; box-sizing: border-box; padding: 16px 24px; border-radius: 20px; color: #0f3c67; text-decoration: none; }
+.cs-pnav-item a .cs-pnav-name { font-weight: 700; line-height: 1.406; }
+.cs-pnav-item a:hover .cs-pnav-name, .cs-pnav-item a:focus-visible .cs-pnav-name { text-decoration: underline; }
+.cs-pnav-item a:hover { border-color: #ebe7df; background: #efede5; }
+.cs-phase-title { margin: 0 0 0 -1px; font-family: 'Unna', serif; font-size: 38px; font-weight: 400; line-height: 1; }
+.cs-callout { padding: 20px 24px; border-radius: 20px; background: rgba(93, 48, 75, .15); }
+.cs-callout p { margin: 0; line-height: var(--lh-body); }
+/* The export includes 30px of space above the mockup, so pull it up to keep a 40px gap */
+.cs-visual.cs-tracker { width: 788px; margin: -10px 0 0; }
+@media screen and (max-width: 1000px) {
+  .cs-visual.cs-tracker { width: 100%; }
+}
+/* Phones: the current phase across the top, the other three in a row below it */
+@media screen and (max-width: 560px) {
+  .cs-pnav ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .cs-pnav-item.is-current { grid-column: 1 / -1; padding: 14px 20px; }
+  .cs-pnav-item a { padding: 14px 12px; }
+  .cs-phase-title { font-size: 34px; }
+}
+.cs-callout ol { margin: 0; padding: 0 0 0 24px; list-style: decimal; line-height: var(--lh-body); }
+.cs-visual.cs-define-concepts { width: 821px; margin: 0; }
+.cs-visual.cs-define-direction { width: 666px; margin: 20px 0 0; }
+@media screen and (max-width: 1000px) {
+  .cs-visual.cs-define-concepts, .cs-visual.cs-define-direction { width: 100%; }
+}
+.cs-callout p + p { margin-top: 19px; }
+.cs-visual.cs-build-course { width: 952px; margin: 10px 0 0; }
+.cs-visual.cs-build-wide { width: 822px; margin: 10px 0 0; }
+.cs-visual.cs-build-col { width: 625px; margin: 10px 0 0; }
+@media screen and (max-width: 1000px) {
+  .cs-visual.cs-build-course, .cs-visual.cs-build-wide, .cs-visual.cs-build-col { width: 100%; }
+}
+.cs-subhead { margin-top: 20px; }
+.cs-visual.cs-prove-flow { width: 752px; margin: 0; }
+.cs-visual.cs-prove-blade { width: 909px; margin: 0; }
+@media screen and (max-width: 1000px) {
+  .cs-visual.cs-prove-flow, .cs-visual.cs-prove-blade { width: 100%; }
+}
+/* Prove: pop-up vs. inline alert before/after */
+.cs-prove-wipe { margin: 20px 0 20px; }
+.cs-prove-wipe .cs-wipe-stage { aspect-ratio: 1250 / 1224; }
+.cs-prove-wipe .cs-wipe-stage img { background: none; }
