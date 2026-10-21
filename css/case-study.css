@@ -141,9 +141,9 @@
 .cs-callout { padding: 20px 24px; border-radius: 20px; background: rgba(93, 48, 75, .15); }
 .cs-callout p { margin: 0; line-height: var(--lh-body); }
 /* The export includes 30px of space above the mockup, so pull it up to keep a 40px gap */
-.cs-visual.cs-tracker { width: 788px; margin: -10px 0 0; }
+.cs-visual.cs-tracker { width: 788px; margin: -10px 0 0 -5px; }
 @media screen and (max-width: 1000px) {
-  .cs-visual.cs-tracker { width: 100%; }
+  .cs-visual.cs-tracker { width: 100%; margin-left: 0; }
 }
 /* Phones: the current phase across the top, the other three in a row below it */
 @media screen and (max-width: 560px) {
