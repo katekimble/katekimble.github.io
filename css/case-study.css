@@ -140,7 +140,8 @@
 .cs-phase-title { margin: 0 0 0 -1px; font-family: 'Unna', serif; font-size: 38px; font-weight: 400; line-height: 1; }
 .cs-callout { padding: 20px 24px; border-radius: 20px; background: rgba(93, 48, 75, .15); }
 .cs-callout p { margin: 0; line-height: var(--lh-body); }
-.cs-visual.cs-tracker { width: 788px; margin: 20px 0 0; }
+/* The export includes 30px of space above the mockup, so pull it up to keep a 40px gap */
+.cs-visual.cs-tracker { width: 788px; margin: -10px 0 0; }
 @media screen and (max-width: 1000px) {
   .cs-visual.cs-tracker { width: 100%; }
 }
