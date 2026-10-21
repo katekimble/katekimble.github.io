@@ -187,8 +187,8 @@ a:hover, a:focus-visible { color: var(--coral); }
   .site-nav { justify-content: space-between; gap: 0; }
   .site-nav .nav-more { display: none; }
   .hero-intro p { font-size: 26px; }
-  /* On phones images run flush with the text, as on the case studies */
-  .greetings { gap: 10px; margin-left: calc((100% - 10px) * -0.029); }
+  /* On phones the images stay centered in the column */
+  .greetings { gap: 10px; margin-left: 0; }
 }
 
 /* External link arrow: points up and out, per the Figma footer */
