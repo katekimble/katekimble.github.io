@@ -148,7 +148,7 @@
 /* Phones: the current phase across the top, the other three in a row below it */
 @media screen and (max-width: 560px) {
   .cs-pnav ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-  .cs-pnav-item.is-current { grid-column: 1 / -1; padding: 14px 20px; }
+  .cs-pnav-item.is-current { grid-column: 1 / -1; order: -1; padding: 14px 20px; }
   .cs-pnav-item a { padding: 14px 12px; }
   .cs-phase-title { font-size: 34px; }
 }
@@ -178,3 +178,12 @@
 @media screen and (max-width: 1000px) {
   .cs-prove-wipe { margin-left: 0; }
 }
+
+/* Phase pages: a quiet link back to the overview, above the top phase cards and beside "Next phase" */
+.cs-pnav-wrap { display: flex; flex-direction: column; gap: 16px; }
+.cs-back { align-self: flex-start; color: #b0a691; font-size: 16px; line-height: 1.2; text-decoration: none; }
+.cs-back-arrow { font-family: 'Golos Text', sans-serif; }
+.cs-back:hover, .cs-back:focus-visible { color: var(--coral); }
+.cs-pnav--top .cs-pnav-item, .cs-pnav--top .cs-pnav-item.is-current { flex: 1 1 0; min-width: 0; }
+.cs-pnav-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 4px; margin-bottom: 10px; }
+.cs-pnav-head--end { justify-content: flex-end; margin-bottom: 0; }

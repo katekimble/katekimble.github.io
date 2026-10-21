@@ -56,7 +56,12 @@ a:hover, a:focus-visible { color: var(--coral); }
 .jump { display: block; width: 71px; height: 71px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
 .jump img { display: block; width: 71px; height: 71px; transition: transform .25s ease; }
 .jump--up img { transform: rotate(180deg); }
-.jump:hover img, .jump:focus-visible img { filter: invert(55%) sepia(60%) saturate(1500%) hue-rotate(320deg) brightness(102%); }
+/* Hover paints the arrow's own shape in the exact coral, rather than tinting the black image with a filter */
+.jump { position: relative; }
+.jump::after { content: ''; position: absolute; inset: 0; background: var(--coral); -webkit-mask: url(../images/Arrow.svg) center / 100% no-repeat; mask: url(../images/Arrow.svg) center / 100% no-repeat; opacity: 0; transition: transform .25s ease; }
+.jump--up::after { transform: rotate(180deg); }
+.jump:hover img, .jump:focus-visible img { opacity: 0; }
+.jump:hover::after, .jump:focus-visible::after { opacity: 1; }
 .jump-row { display: flex; justify-content: flex-end; padding-bottom: 20px; }
 .jump-cell { min-height: 71px; }
 /* When the arrow's spot is below the first screen, it floats at the bottom of the window until you scroll to it */
