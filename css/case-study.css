@@ -153,10 +153,10 @@
   .cs-phase-title { font-size: 34px; }
 }
 .cs-callout ol { margin: 0; padding: 0 0 0 24px; list-style: decimal; line-height: var(--lh-body); }
-.cs-visual.cs-define-concepts { width: 821px; margin: 0; }
-.cs-visual.cs-define-direction { width: 666px; margin: 20px 0 0; }
+.cs-visual.cs-define-concepts { width: 821px; margin: 0 0 0 -5px; }
+.cs-visual.cs-define-direction { width: 666px; margin: 20px 0 0 -24px; }
 @media screen and (max-width: 1000px) {
-  .cs-visual.cs-define-concepts, .cs-visual.cs-define-direction { width: 100%; }
+  .cs-visual.cs-define-concepts, .cs-visual.cs-define-direction { width: 100%; margin-left: 0; }
 }
 .cs-callout p + p { margin-top: 19px; }
 .cs-visual.cs-build-course { width: 952px; margin: 10px 0 0; }
