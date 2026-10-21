@@ -175,3 +175,6 @@
 .cs-prove-wipe { margin: 20px 0 20px -5px; }
 .cs-prove-wipe .cs-wipe-stage { aspect-ratio: 1250 / 1224; }
 .cs-prove-wipe .cs-wipe-stage img { background: none; }
+@media screen and (max-width: 1000px) {
+  .cs-prove-wipe { margin-left: 0; }
+}
