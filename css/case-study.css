@@ -5,20 +5,20 @@
 .cs-intro { flex: none; width: 625px; max-width: 100%; display: flex; flex-direction: column; gap: 20px; }
 .cs-intro h1 { margin: 0 0 0 -2px; font-family: 'Unna', serif; font-size: 48px; line-height: 1; font-weight: 400; }
 .cs-details { display: flex; flex-direction: column; gap: 20px; }
-.cs-subtitle { margin: 0; font-size: 25px; line-height: 1.406; }
+.cs-subtitle { margin: 0; font-size: 25px; line-height: var(--lh-head); }
 .cs-stats { display: flex; flex-direction: column; gap: 8px; margin: 0; }
 .cs-stat { display: flex; gap: 24px; align-items: baseline; }
 .cs-stat dt { flex: none; width: 75px; }
-.cs-stat dd { margin: 0; line-height: 1.2; }
+.cs-stat dd { margin: 0; line-height: var(--lh-body); }
 .cs-hero .section-aside { padding-bottom: 0; }
 
 .cs-story { display: flex; flex-direction: column; gap: 40px; }
 .cs-block { display: flex; flex-direction: column; gap: 10px; }
 .cs-block-body { display: flex; flex-direction: column; gap: 20px; }
-.cs-heading { margin: 0; font-size: 25px; line-height: 1.406; font-weight: 400; }
-.cs-text p { margin: 0; line-height: 1.2; }
+.cs-heading { margin: 0; font-size: 25px; line-height: var(--lh-head); font-weight: 400; }
+.cs-text p { margin: 0; line-height: var(--lh-body); }
 .cs-text p + p, .cs-text ul + p { margin-top: 19px; }
-.cs-text ul { margin: 0; padding: 0; list-style: disc; line-height: 1.2; }
+.cs-text ul { margin: 0; padding: 0; list-style: disc; line-height: var(--lh-body); }
 .cs-text li { margin-left: 24px; }
 
 /* Visuals run past the text column into the arrow column */
@@ -109,7 +109,7 @@
 /* Phase cards, styled like the Next project card; the row runs past the text column like the visuals */
 .cs-phases { display: grid; grid-template-columns: repeat(4, 165px); gap: 24px; margin: 0; padding: 0; list-style: none; }
 .cs-phase { display: flex; flex-direction: column; gap: 10px; padding: 24px; background: #f6f5f0; border: 1px solid #ebe7df; border-radius: 20px; }
-.cs-phase p { margin: 0; line-height: 1.2; }
+.cs-phase p { margin: 0; line-height: var(--lh-body); }
 .cs-phase .cs-heading { margin-bottom: 10px; }
 @media screen and (max-width: 1000px) {
   .cs-phases { grid-template-columns: repeat(4, 1fr); }

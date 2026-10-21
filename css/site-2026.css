@@ -6,7 +6,10 @@
   --plum: #5D304B;
   --coral: #FF6F61;
   --link: #DB3725;
-  --rule: #000;
+  --rule: #EBE7DF;
+  /* Body copy and headline leading */
+  --lh-body: 1.35;
+  --lh-head: 1.3;
   --col: 297px;
   --gap: 30px;
   --page: 952px;
@@ -14,7 +17,7 @@
 
 [hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--coral); color: var(--ink); font-family: 'Roboto', sans-serif; font-size: 16px; line-height: 1.2; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--coral); color: var(--ink); font-family: 'Roboto', sans-serif; font-size: 16px; line-height: var(--lh-body); -webkit-font-smoothing: antialiased; }
 strong { font-weight: 700; }
 a { color: inherit; }
 a:hover, a:focus-visible { color: var(--coral); }
@@ -31,11 +34,21 @@ a:hover, a:focus-visible { color: var(--coral); }
 
 /* Top nav */
 /* Nav sits centered in the top margin band */
-.site-nav { --band: 98px; display: flex; align-items: center; justify-content: flex-end; gap: var(--gap); height: var(--band); margin-bottom: -40px; }
+.site-nav { --band: 98px; position: relative; z-index: 6; display: flex; align-items: center; justify-content: flex-end; gap: var(--gap); height: var(--band); margin-bottom: -40px; }
 /* Nav links are red so they read differently from the blue labels, which aren't links */
-.site-nav a { width: 134px; color: var(--link); font-size: 14px; font-weight: 700; line-height: 1.406; letter-spacing: .7px; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
-.site-nav a[aria-current="page"] { color: var(--plum); }
-.site-nav a:hover, .site-nav a:focus-visible { color: var(--coral); }
+.site-nav a, .contact-toggle { box-sizing: border-box; padding: 4px 8px; border: 2px solid transparent; border-radius: 5px; background: none; color: var(--link); font-size: 14px; font-weight: 700; line-height: 1.406; letter-spacing: .7px; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+.site-nav a[aria-current="page"] { color: var(--plum); border-color: #EBE7DF; }
+.site-nav a:hover, .site-nav a:focus-visible, .contact-toggle:hover, .contact-toggle:focus-visible, .contact-toggle[aria-expanded="true"] { color: var(--coral); }
+.contact-toggle { font-family: inherit; cursor: pointer; }
+
+/* Contact: a pill just under the nav item with the email; clicking it copies the address */
+.contact { position: relative; }
+.contact-pop { position: absolute; top: calc(100% + 4px); right: 0; }
+.contact-copy { display: inline-flex; align-items: baseline; gap: 10px; padding: 8px 14px 8px 16px; border: 2px solid #EBE7DF; border-radius: 999px; background: #fff; color: var(--ink); font: 400 16px/1.2 'Roboto', sans-serif; white-space: nowrap; cursor: pointer; }
+.contact-copy-label { color: #8a8a8a; font-size: 13px; }
+.contact-copy:hover, .contact-copy:focus-visible { border-color: #d6d0c4; }
+.contact-copy:hover .contact-copy-label, .contact-copy:focus-visible .contact-copy-label { color: var(--ink); }
+.contact-copy.is-copied .contact-copy-label { color: #226639; }
 
 /* Jump arrows */
 .jump { display: block; width: 71px; height: 71px; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer; }
@@ -54,8 +67,8 @@ a:hover, a:focus-visible { color: var(--coral); }
 .hero-logo { flex: none; width: var(--col); display: flex; justify-content: center; }
 .hero-logo img { display: block; width: 197px; height: auto; }
 .hero-intro { flex: 1; min-width: 0; font-family: 'Unna', serif; font-weight: 400; }
-.hero-intro h1 { margin: 0; font-size: 48px; line-height: 1.2; font-weight: 400; }
-.hero-intro p { margin: 0; font-size: 38px; line-height: 1.382; }
+.hero-intro h1 { margin: 0; font-size: 48px; line-height: 1.1; font-weight: 400; }
+.hero-intro p { margin: 0; font-size: 38px; line-height: var(--lh-head); }
 
 .principles { display: flex; align-items: center; justify-content: center; gap: var(--gap); padding: 20px 0; }
 .principles-col { flex: none; width: var(--col); display: flex; flex-direction: column; gap: var(--gap); }
@@ -78,23 +91,25 @@ a:hover, a:focus-visible { color: var(--coral); }
 @media (prefers-reduced-motion: reduce) { .petal, .lead-line { transition: none; } }
 
 /* Shared section layout: content column plus right-hand arrow column */
-.section { display: flex; gap: var(--gap); margin-top: 40px; padding-top: 61px; border-top: 1px solid var(--rule); }
+.section { display: flex; gap: var(--gap); margin-top: 40px; padding-top: 61px; border-top: 2px solid var(--rule); }
 .section-content { flex: none; width: 625px; max-width: 100%; display: flex; flex-direction: column; gap: 40px; }
 .section-aside { flex: none; width: var(--col); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px; }
 .section-title { margin: 0; font-family: 'Unna', serif; font-size: 48px; line-height: 1; font-weight: 400; }
 
 .entry { display: flex; flex-direction: column; gap: 10px; }
 .entry-body { display: flex; flex-direction: column; gap: 20px; }
-.entry h3 { margin: 0; font-size: 25px; line-height: 1.406; font-weight: 400; }
+.entry h3 { margin: 0; font-size: 25px; line-height: var(--lh-head); font-weight: 400; }
 .entry-text { display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; }
 .entry-text p { margin: 0; }
-.text-link { display: inline; padding: 0; border: 0; text-decoration: none; background: none; color: inherit; font: inherit; line-height: 1.2; text-align: left; cursor: pointer; }
+.text-link { display: inline; padding: 0; border: 0; text-decoration: none; background: none; color: inherit; font: inherit; line-height: var(--lh-body); text-align: left; cursor: pointer; }
 .text-link span { text-decoration: underline; }
 .text-link:hover, .text-link:focus-visible { color: var(--coral); }
 .case-study-link { align-self: flex-start; margin-top: 10px; }
 
-.greetings { display: grid; grid-template-columns: repeat(4, minmax(0, 150px)); gap: 10px; padding-top: 20px; }
+.greetings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-top: 20px; }
 .greetings img { display: block; width: 100%; height: auto; }
+/* Each GIF has 5.8% of white space either side of the phone; pull the grid left so the first phone's edge sits 5px into the margin, like the case study screenshots */
+.greetings { margin-left: calc((100% - 20px) * -0.029 - 5px); }
 
 /* Resume + contact page */
 /* Resume page about section; the title sits as far below the nav as the homepage logo */
@@ -105,7 +120,7 @@ a:hover, a:focus-visible { color: var(--coral); }
 .bio-photo img { display: block; width: 100%; height: auto; aspect-ratio: 300 / 275; object-fit: cover; box-sizing: border-box; border: 2px solid #ebe7df; border-radius: 50px; }
 .bio { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .bio p { margin: 0; }
-.bio-lead { font-size: 25px; line-height: 1.406; }
+.bio-lead { font-size: 25px; line-height: var(--lh-head); }
 .bio-text { display: flex; flex-direction: column; gap: 10px; }
 
 .job { display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; }
@@ -118,16 +133,16 @@ a:hover, a:focus-visible { color: var(--coral); }
 .job li .item { font-weight: 500; }
 .history { display: flex; flex-direction: column; gap: 10px; }
 .employer { display: flex; flex-direction: column; gap: 20px; }
-.employer h3 { margin: 0; font-size: 25px; line-height: 1.406; font-weight: 400; }
+.employer h3 { margin: 0; font-size: 25px; line-height: var(--lh-head); font-weight: 400; }
 .employer-roles { display: flex; flex-direction: column; }
 .employer-roles p { margin: 0; line-height: 1.406; }
 .education { display: flex; flex-direction: column; gap: 10px; padding-bottom: 20px; }
-.education h3 { margin: 0; font-size: 25px; line-height: 1.406; font-weight: 400; }
+.education h3 { margin: 0; font-size: 25px; line-height: var(--lh-head); font-weight: 400; }
 .education p { margin: 0; }
 .more-link { padding-top: 10px; }
 
 /* Footer */
-.site-footer { display: flex; align-items: center; gap: var(--gap); margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--rule); }
+.site-footer { display: flex; align-items: center; gap: var(--gap); margin-top: 40px; padding: 20px 0; border-top: 2px solid var(--rule); }
 .site-footer nav { display: flex; gap: var(--gap); width: 441px; }
 .site-footer nav a { width: 134px; text-decoration: none; }
 .site-footer nav a:hover, .site-footer nav a:focus-visible { text-decoration: underline; }
@@ -140,7 +155,6 @@ a:hover, a:focus-visible { color: var(--coral); }
   .site-nav { --band: 80px; }
   /* Footer text sits as far from the bottom edge as the nav links sit from the top */
   .page { padding-left: 32px; padding-right: 32px; padding-bottom: 10px; }
-  .site-nav a { width: auto; }
   .hero-header { flex-direction: column; align-items: flex-start; }
   .hero-logo { width: auto; justify-content: flex-start; }
   .hero-logo img { width: 140px; }
@@ -169,9 +183,12 @@ a:hover, a:focus-visible { color: var(--coral); }
 }
 
 @media screen and (max-width: 560px) {
-  .site-nav { gap: 20px; }
+  /* Shorter labels so all three fit, spread across the width */
+  .site-nav { justify-content: space-between; gap: 0; }
+  .site-nav .nav-more { display: none; }
   .hero-intro p { font-size: 26px; }
-  .greetings { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* On phones the images stay centered in the column */
+  .greetings { gap: 10px; margin-left: 0; }
 }
 
 /* External link arrow: points up and out, per the Figma footer */

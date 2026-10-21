@@ -105,3 +105,55 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('pointerdown', e => { if (!rosette.contains(e.target)) hideTip(); });
   }
 });
+
+// Contact in the nav: opens a pill with the email; clicking the pill copies it, with a soft click
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.contact-toggle');
+  const pop = document.getElementById('contact-pop');
+  if (!toggle || !pop) return;
+  const copy = pop.querySelector('.contact-copy');
+  const label = copy?.querySelector('.contact-copy-label');
+  const setOpen = open => {
+    pop.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) copy?.focus();
+  };
+  toggle.addEventListener('click', () => setOpen(pop.hidden));
+  document.addEventListener('click', event => { if (!pop.hidden && !event.target.closest('.contact')) setOpen(false); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !pop.hidden) { setOpen(false); toggle.focus(); } });
+
+  // A short, quiet tick made in the browser, so there's no sound file to load
+  let audio = null;
+  function tick() {
+    try {
+      audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+      const now = audio.currentTime;
+      const osc = audio.createOscillator(), gain = audio.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(1400, now);
+      osc.frequency.exponentialRampToValueAtTime(700, now + 0.06);
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.12, now + 0.005);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.08);
+      osc.connect(gain).connect(audio.destination);
+      osc.start(now); osc.stop(now + 0.09);
+    } catch (e) {}
+  }
+
+  let reset = null;
+  copy?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(copy.dataset.copy);
+    } catch (e) {
+      // Older browsers: select the address and copy the selection
+      const range = document.createRange(); range.selectNodeContents(copy.querySelector('.contact-email'));
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      try { document.execCommand('copy'); } catch (e2) {}
+    }
+    tick();
+    label.textContent = 'Copied';
+    copy.classList.add('is-copied');
+    clearTimeout(reset);
+    reset = setTimeout(() => { label.textContent = 'Copy'; copy.classList.remove('is-copied'); }, 2000);
+  });
+});
