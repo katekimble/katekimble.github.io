@@ -105,3 +105,35 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('pointerdown', e => { if (!rosette.contains(e.target)) hideTip(); });
   }
 });
+
+// Contact in the nav: opens a small panel with the email and a button that copies it
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.contact-toggle');
+  const pop = document.getElementById('contact-pop');
+  if (!toggle || !pop) return;
+  const copy = pop.querySelector('.contact-copy');
+  const setOpen = open => {
+    pop.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) copy?.focus();
+  };
+  toggle.addEventListener('click', () => setOpen(pop.hidden));
+  document.addEventListener('click', event => { if (!pop.hidden && !event.target.closest('.contact')) setOpen(false); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !pop.hidden) { setOpen(false); toggle.focus(); } });
+  let reset = null;
+  copy?.addEventListener('click', async () => {
+    const email = copy.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch (e) {
+      // Older browsers: select the address so it can be copied by hand
+      const range = document.createRange(); range.selectNodeContents(pop.querySelector('a'));
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      try { document.execCommand('copy'); } catch (e2) {}
+    }
+    copy.textContent = 'Copied ✓';
+    copy.classList.add('is-copied');
+    clearTimeout(reset);
+    reset = setTimeout(() => { copy.textContent = 'Copy'; copy.classList.remove('is-copied'); }, 2000);
+  });
+});
