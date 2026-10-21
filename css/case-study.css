@@ -166,12 +166,12 @@
   .cs-visual.cs-build-course, .cs-visual.cs-build-wide, .cs-visual.cs-build-col { width: 100%; }
 }
 .cs-subhead { margin-top: 20px; }
-.cs-visual.cs-prove-flow { width: 752px; margin: 0; }
-.cs-visual.cs-prove-blade { width: 909px; margin: 0; }
+.cs-visual.cs-prove-flow { width: 752px; margin: 0 0 0 -5px; }
+.cs-visual.cs-prove-blade { width: 909px; margin: 0 0 0 -5px; }
 @media screen and (max-width: 1000px) {
-  .cs-visual.cs-prove-flow, .cs-visual.cs-prove-blade { width: 100%; }
+  .cs-visual.cs-prove-flow, .cs-visual.cs-prove-blade, .cs-prove-wipe { width: 100%; margin-left: 0; }
 }
 /* Prove: pop-up vs. inline alert before/after */
-.cs-prove-wipe { margin: 20px 0 20px; }
+.cs-prove-wipe { margin: 20px 0 20px -5px; }
 .cs-prove-wipe .cs-wipe-stage { aspect-ratio: 1250 / 1224; }
 .cs-prove-wipe .cs-wipe-stage img { background: none; }
