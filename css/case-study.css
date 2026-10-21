@@ -171,3 +171,7 @@
 @media screen and (max-width: 1000px) {
   .cs-visual.cs-prove-flow, .cs-visual.cs-prove-blade { width: 100%; }
 }
+/* Prove: pop-up vs. inline alert before/after */
+.cs-prove-wipe { margin: 20px 0 20px; }
+.cs-prove-wipe .cs-wipe-stage { aspect-ratio: 1250 / 1224; }
+.cs-prove-wipe .cs-wipe-stage img { background: none; }
