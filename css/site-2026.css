@@ -108,6 +108,8 @@ a:hover, a:focus-visible { color: var(--coral); }
 
 .greetings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-top: 20px; }
 .greetings img { display: block; width: 100%; height: auto; }
+/* Each GIF has 5.8% of white space either side of the phone; pull the grid left so the first phone's edge sits 5px into the margin, like the case study screenshots */
+.greetings { margin-left: calc((100% - 20px) * -0.029 - 5px); }
 
 /* Resume + contact page */
 /* Resume page about section; the title sits as far below the nav as the homepage logo */
@@ -185,7 +187,8 @@ a:hover, a:focus-visible { color: var(--coral); }
   .site-nav { justify-content: space-between; gap: 0; }
   .site-nav .nav-more { display: none; }
   .hero-intro p { font-size: 26px; }
-  .greetings { gap: 10px; }
+  /* On phones images run flush with the text, as on the case studies */
+  .greetings { gap: 10px; margin-left: calc((100% - 10px) * -0.029); }
 }
 
 /* External link arrow: points up and out, per the Figma footer */
