@@ -171,3 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
   toggle.addEventListener('click', copyEmail);
   copy?.addEventListener('click', copyEmail);
 });
+
+// Links into a case study (#phase-title) land on that heading; the password screen
+// writes the page in after load, so the browser doesn't jump there on its own
+document.addEventListener('DOMContentLoaded', () => {
+  const target = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (!target) return;
+  const go = () => target.scrollIntoView({ block: 'start' });
+  requestAnimationFrame(go);
+  window.addEventListener('load', go, { once: true });
+});

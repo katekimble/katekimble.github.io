@@ -141,37 +141,49 @@
 .cs-callout { padding: 20px 24px; border-radius: 20px; background: rgba(93, 48, 75, .15); }
 .cs-callout p { margin: 0; line-height: var(--lh-body); }
 /* The export includes 30px of space above the mockup, so pull it up to keep a 40px gap */
-.cs-visual.cs-tracker { width: 788px; margin: -10px 0 0; }
+.cs-visual.cs-tracker { width: 788px; margin: -10px 0 0 -5px; }
 @media screen and (max-width: 1000px) {
-  .cs-visual.cs-tracker { width: 100%; }
+  .cs-visual.cs-tracker { width: 100%; margin-left: 0; }
 }
 /* Phones: the current phase across the top, the other three in a row below it */
 @media screen and (max-width: 560px) {
   .cs-pnav ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-  .cs-pnav-item.is-current { grid-column: 1 / -1; padding: 14px 20px; }
+  .cs-pnav-item.is-current { grid-column: 1 / -1; order: -1; padding: 14px 20px; }
   .cs-pnav-item a { padding: 14px 12px; }
   .cs-phase-title { font-size: 34px; }
 }
 .cs-callout ol { margin: 0; padding: 0 0 0 24px; list-style: decimal; line-height: var(--lh-body); }
-.cs-visual.cs-define-concepts { width: 821px; margin: 0; }
-.cs-visual.cs-define-direction { width: 666px; margin: 20px 0 0; }
+.cs-visual.cs-define-concepts { width: 821px; margin: 0 0 0 -5px; }
+.cs-visual.cs-define-direction { width: 666px; margin: 20px 0 0 -24px; }
 @media screen and (max-width: 1000px) {
-  .cs-visual.cs-define-concepts, .cs-visual.cs-define-direction { width: 100%; }
+  .cs-visual.cs-define-concepts, .cs-visual.cs-define-direction { width: 100%; margin-left: 0; }
 }
 .cs-callout p + p { margin-top: 19px; }
-.cs-visual.cs-build-course { width: 952px; margin: 10px 0 0; }
-.cs-visual.cs-build-wide { width: 822px; margin: 10px 0 0; }
-.cs-visual.cs-build-col { width: 625px; margin: 10px 0 0; }
+.cs-visual.cs-build-course { width: 952px; margin: 10px 0 0 -24px; }
+.cs-visual.cs-build-wide { width: 822px; margin: 10px 0 0 -5px; }
+.cs-visual.cs-build-col { width: 625px; margin: 10px 0 0 -5px; }
 @media screen and (max-width: 1000px) {
-  .cs-visual.cs-build-course, .cs-visual.cs-build-wide, .cs-visual.cs-build-col { width: 100%; }
+  .cs-visual.cs-build-course, .cs-visual.cs-build-wide, .cs-visual.cs-build-col { width: 100%; margin-left: 0; }
 }
 .cs-subhead { margin-top: 20px; }
-.cs-visual.cs-prove-flow { width: 752px; margin: 0; }
-.cs-visual.cs-prove-blade { width: 909px; margin: 0; }
+.cs-visual.cs-prove-flow { width: 752px; margin: 0 0 0 -5px; }
+.cs-visual.cs-prove-blade { width: 909px; margin: 0 0 0 -5px; }
 @media screen and (max-width: 1000px) {
-  .cs-visual.cs-prove-flow, .cs-visual.cs-prove-blade { width: 100%; }
+  .cs-visual.cs-prove-flow, .cs-visual.cs-prove-blade, .cs-prove-wipe { width: 100%; margin-left: 0; }
 }
 /* Prove: pop-up vs. inline alert before/after */
-.cs-prove-wipe { margin: 20px 0 20px; }
+.cs-prove-wipe { margin: 20px 0 20px -5px; }
 .cs-prove-wipe .cs-wipe-stage { aspect-ratio: 1250 / 1224; }
 .cs-prove-wipe .cs-wipe-stage img { background: none; }
+@media screen and (max-width: 1000px) {
+  .cs-prove-wipe { margin-left: 0; }
+}
+
+/* Phase pages: a quiet link back to the overview, above the top phase cards and beside "Next phase" */
+.cs-pnav-wrap { display: flex; flex-direction: column; gap: 16px; }
+.cs-back { align-self: flex-start; color: #b0a691; font-size: 16px; line-height: 1.2; text-decoration: none; }
+.cs-back-arrow { font-family: 'Golos Text', sans-serif; }
+.cs-back:hover, .cs-back:focus-visible { color: var(--coral); }
+.cs-pnav--top .cs-pnav-item, .cs-pnav--top .cs-pnav-item.is-current { flex: 1 1 0; min-width: 0; }
+.cs-pnav-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 4px; margin-bottom: 10px; }
+.cs-pnav-head--end { justify-content: flex-end; margin-bottom: 0; }
