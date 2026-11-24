@@ -22,7 +22,7 @@ strong { font-weight: 700; }
 a { color: inherit; }
 a:hover, a:focus-visible { color: var(--coral); }
 
-/* Coral frame: same rules as the original site (css/style.css .container) */
+/* Coral frame around the white content container */
 .container { background-color: #fff; margin: 3% auto; max-width: 94%; overflow: hidden; }
 @media screen and (min-width: 768px) { .container { margin: 1.5% auto; max-width: 96.5%; } }
 @media screen and (min-width: 1224px) { .container { margin: 1% auto; max-width: 98%; } }
